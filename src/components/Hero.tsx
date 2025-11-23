@@ -1,6 +1,13 @@
 import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
+  const scrollToServices = () => {
+    const section = document.getElementById('our-business');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden mt-20">
       <div
@@ -21,7 +28,10 @@ export default function Hero() {
         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
           Dynamic event solutions for corporate excellence and vibrant community celebrations across Vadodara and Gujarat
         </p>
-        <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center mx-auto space-x-2">
+        <button
+          onClick={scrollToServices}
+          className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center mx-auto space-x-2"
+        >
           <span>Explore Our Services</span>
           <ArrowRight size={20} />
         </button>

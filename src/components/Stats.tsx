@@ -4,9 +4,9 @@ export default function Stats() {
   const stats = [
     {
       icon: Calendar,
-      value: '500+',
-      label: 'Events Delivered',
-      description: 'From concept to execution',
+      value: 'Creative Minds',
+      label: 'Quality-Driven Execution',
+      description: 'Excellence in every detail',
     },
     {
       icon: Globe,
@@ -34,7 +34,7 @@ export default function Stats() {
               <div className="flex justify-center mb-4">
                 <stat.icon size={48} className="text-white" />
               </div>
-              <div className="text-5xl font-bold text-white mb-2">
+              <div className={`font-bold text-white mb-2 ${index === 0 ? 'text-3xl' : 'text-5xl'}`}>
                 {stat.value}
               </div>
               <div className="text-xl font-semibold text-white mb-2">

@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram, Shield } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -18,8 +18,12 @@ export default function Footer({ onNavigate }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-1">
-            <h3 className="text-2xl font-bold mb-4 text-amber-400">VibeCrafters</h3>
-            <p className="text-gray-400 leading-relaxed">
+            <img 
+              src="/assets/footer-logo.png" 
+              alt="VibeCrafters Entertainment" 
+              className="h-14 w-auto object-contain mb-4 brightness-110"
+            />
+            <p className="text-gray-400 leading-relaxed text-sm">
               Dynamic experiential events partner revolutionizing corporate and community celebrations.
             </p>
             <div className="flex space-x-4 mt-6">
@@ -41,7 +45,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {['home', 'about', 'businesses', 'news', 'contact'].map((page) => (
+              {['home', 'about', 'businesses', 'residential-events', 'news', 'contact'].map((page) => (
                 <li key={page}>
                   <button
                     onClick={() => {
@@ -50,7 +54,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                     }}
                     className="text-gray-400 hover:text-blue-400 transition-colors capitalize"
                   >
-                    {page === 'home' ? 'Home' : page === 'about' ? 'About us' : page === 'businesses' ? 'Our Businesses' : page === 'news' ? 'News & Media' : 'Contact'}
+                    {page === 'home' ? 'Home' : page === 'about' ? 'About us' : page === 'businesses' ? 'Corporate Services' : page === 'residential-events' ? 'Festive Events' : page === 'news' ? 'News & Media' : 'Contact'}
                   </button>
                 </li>
               ))}
@@ -96,6 +100,13 @@ export default function Footer({ onNavigate }: FooterProps) {
             </div>
             <div className="text-right">
               <p>&copy; 2024 VibeCrafters Entertainment. All rights reserved.</p>
+              <button
+                onClick={() => onNavigate('admin-login')}
+                className="mt-2 text-gray-500 hover:text-amber-400 transition-colors text-xs flex items-center justify-end gap-1 ml-auto"
+              >
+                <Shield size={14} />
+                Admin
+              </button>
             </div>
           </div>
         </div>

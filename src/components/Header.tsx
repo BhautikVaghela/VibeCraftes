@@ -12,7 +12,8 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About us' },
-    { id: 'businesses', label: 'Our Businesses' },
+    { id: 'businesses', label: 'Corporate Services' },
+    { id: 'residential-events', label: 'Festive Events' },
     { id: 'news', label: 'News & Media' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -26,12 +27,16 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
   return (
     <header className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-28">
           <button
             onClick={() => handleNavClick('home')}
-            className="flex items-center space-x-2 text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors"
+            className="flex items-center hover:opacity-90 transition-opacity py-3"
           >
-            <span className="text-amber-600">VibeCrafters</span>
+            <img 
+              src="/assets/header-logo.png" 
+              alt="VibeCrafters Entertainment" 
+              className="h-20 w-auto object-contain"
+            />
           </button>
 
           <div className="hidden md:flex space-x-8">

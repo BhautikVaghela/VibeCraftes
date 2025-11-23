@@ -1,6 +1,10 @@
 import { Users, Target, Globe, Award } from 'lucide-react';
 
-export default function AboutPage() {
+interface AboutPageProps {
+  onNavigate: (page: string) => void;
+}
+
+export default function AboutPage({ onNavigate }: AboutPageProps) {
   const values = [
     {
       icon: Target,
@@ -106,45 +110,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-16">
-            Our Journey
-          </h2>
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-amber-200"></div>
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
-                >
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
-                    <div className="bg-white p-6 rounded-lg shadow-lg">
-                      <div className="text-2xl font-bold text-amber-600 mb-2">
-                        {milestone.year}
-                      </div>
-                      <p className="text-gray-700">{milestone.event}</p>
-                    </div>
-                  </div>
-                  <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-amber-600 rounded-full border-4 border-white shadow-lg">
-                    <div className="w-3 h-3 bg-white rounded-full"></div>
-                  </div>
-                  <div className="w-1/2"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="py-20 bg-gradient-to-br from-amber-600 to-amber-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Create Something Extraordinary?</h2>
           <p className="text-xl text-amber-100 mb-8 max-w-3xl mx-auto">
             Let's collaborate to bring your vision to life with our expertise, innovation, and passion for excellence.
           </p>
-          <button className="bg-white text-amber-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-amber-50 transition-colors">
+          <button
+            onClick={() => {
+              onNavigate('contact');
+              window.scrollTo(0, 0);
+            }}
+            className="bg-white text-amber-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-amber-50 transition-colors"
+          >
             Get in Touch
           </button>
         </div>

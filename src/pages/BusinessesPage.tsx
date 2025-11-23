@@ -1,22 +1,11 @@
 import { Sparkles, Briefcase, Users, Megaphone, Gift, Lightbulb, CheckCircle } from 'lucide-react';
 
-export default function BusinessesPage() {
+interface BusinessesPageProps {
+  onNavigate: (page: string) => void;
+}
+
+export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
   const businesses = [
-    {
-      icon: Sparkles,
-      title: 'Festival Celebrations',
-      description:
-        'Celebrating culture and community with style. From Holi and Navratri Garba nights to Diwali melas and regional festivals, we deliver memorable celebrations.',
-      services: [
-        'Theme concept and design',
-        'Stage setup, sound & lighting',
-        'Artist/DJ coordination',
-        'Stall management',
-        'Safety and permissions',
-        'Guest experience management',
-      ],
-      image: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800',
-    },
     {
       icon: Briefcase,
       title: 'MICE Events',
@@ -184,7 +173,13 @@ export default function BusinessesPage() {
           <p className="text-xl text-amber-100 mb-8 max-w-3xl mx-auto">
             Let's collaborate to create an experience that resonates with your audience and achieves your business goals.
           </p>
-          <button className="bg-white text-amber-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-amber-50 transition-colors">
+          <button
+            onClick={() => {
+              onNavigate('contact');
+              window.scrollTo(0, 0);
+            }}
+            className="bg-white text-amber-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-amber-50 transition-colors"
+          >
             Start a Conversation
           </button>
         </div>

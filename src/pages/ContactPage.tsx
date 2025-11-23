@@ -1,32 +1,39 @@
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, Clock, Send } from 'lucide-react';
 import { useState } from 'react';
+import { submitContactInquiry } from '../services/contactService';
+
+const initialFormState = {
+  name: '',
+  email: '',
+  company: '',
+  phone: '',
+  service: '',
+  message: '',
+};
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState(initialFormState);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
 
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        service: '',
-        message: '',
-      });
-    }, 3000);
+    setStatus('loading');
+    setStatusMessage('');
+
+    try {
+      await submitContactInquiry(formData);
+      setStatus('success');
+      setStatusMessage("Thank you! Your message has been sent successfully. We'll get back to you soon.");
+      setFormData(initialFormState);
+    } catch (error) {
+      setStatus('error');
+      setStatusMessage(
+        error instanceof Error
+          ? error.message
+          : 'Something went wrong while sending your message. Please try again later.'
+      );
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -35,16 +42,6 @@ export default function ContactPage() {
       [e.target.name]: e.target.value,
     });
   };
-
-  const offices = [
-    {
-      city: 'Vadodara',
-      address: 'Waghodia Road',
-      address2: 'Vadodara, Gujarat - 390025',
-      phone: '+91-9898218561',
-      email: 'vibecrafters.entertainment@gmail.com',
-    },
-  ];
 
   return (
     <div className="pt-20">
@@ -87,7 +84,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
-                    <p className="text-gray-600">+91-9898218561</p>
+                    <a href="tel:+919898218561" className="text-gray-600 hover:text-amber-600">
+                      +91-9898218561
+                    </a>
                   </div>
                 </div>
 
@@ -208,60 +207,31 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
 
-                {submitted ? (
-                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
-                    Thank you! Your message has been sent successfully. We'll get back to you soon.
-                  </div>
-                ) : (
-                  <button
-                    type="submit"
-                    className="w-full bg-amber-600 hover:bg-amber-700 text-white px-6 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center space-x-2"
+                {status !== 'idle' && statusMessage && (
+                  <div
+                    className={`px-4 py-3 rounded-lg ${
+                      status === 'success'
+                        ? 'bg-green-100 border border-green-400 text-green-700'
+                        : status === 'error'
+                          ? 'bg-red-100 border border-red-400 text-red-700'
+                          : 'bg-amber-50 border border-amber-200 text-amber-700'
+                    }`}
+                    role="status"
+                    aria-live="polite"
                   >
-                    <span>Send Message</span>
-                    <Send size={20} />
-                  </button>
+                    {statusMessage}
+                  </div>
                 )}
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="w-full bg-amber-600 hover:bg-amber-700 disabled:bg-amber-400 text-white px-6 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center space-x-2"
+                >
+                  <span>{status === 'loading' ? 'Sending...' : 'Send Message'}</span>
+                  <Send size={20} className={status === 'loading' ? 'animate-pulse' : ''} />
+                </button>
               </form>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 text-center mb-16">
-            Our Offices
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {offices.map((office, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-              >
-                <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                  <MapPin size={32} className="text-amber-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {office.city}
-                </h3>
-                <div className="space-y-3 text-gray-600">
-                  <p>{office.address}</p>
-                  <p>{office.address2}</p>
-                  <div className="pt-3 border-t border-gray-200">
-                    <p className="flex items-center mb-2">
-                      <Phone size={16} className="mr-2 text-amber-600" />
-                      {office.phone}
-                    </p>
-                    <p className="flex items-center">
-                      <Mail size={16} className="mr-2 text-amber-600" />
-                      <a href={`mailto:${office.email}`} className="text-amber-600 hover:text-amber-700">
-                        {office.email}
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

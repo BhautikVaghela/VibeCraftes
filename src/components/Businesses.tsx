@@ -60,7 +60,7 @@ export default function Businesses({ onNavigate }: BusinessesProps) {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="our-business" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
@@ -84,7 +84,7 @@ export default function Businesses({ onNavigate }: BusinessesProps) {
                   {business.description}
                 </p>
                 <button
-                  onClick={() => onNavigate('businesses')}
+                  onClick={() => onNavigate(business.title === 'Festival Celebrations' ? 'residential-events' : 'businesses')}
                   className="text-amber-600 font-semibold flex items-center space-x-2 hover:text-amber-700 transition-colors"
                 >
                   <span>Learn More</span>
@@ -93,6 +93,19 @@ export default function Businesses({ onNavigate }: BusinessesProps) {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <button
+            onClick={() => {
+              onNavigate('contact');
+              window.scrollTo(0, 0);
+            }}
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+          >
+            <span>Get in Touch</span>
+            <ArrowRight size={20} />
+          </button>
         </div>
       </div>
     </section>
