@@ -60,32 +60,32 @@ export default function Businesses({ onNavigate }: BusinessesProps) {
   };
 
   return (
-    <section id="our-business" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+    <section id="our-business" className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-5 leading-tight">Our Services</h2>
+          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Comprehensive event solutions spanning corporate excellence, festive celebrations, and brand activation
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {businesses.map((business, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group"
+              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group border border-gray-100"
             >
-              <div className={`bg-gradient-to-r ${colorClasses[business.color as keyof typeof colorClasses]} p-6 text-white`}>
-                <business.icon size={40} className="mb-4" />
-                <h3 className="text-2xl font-bold">{business.title}</h3>
+              <div className={`bg-gradient-to-r ${colorClasses[business.color as keyof typeof colorClasses]} p-6 md:p-7 text-white`}>
+                <business.icon size={36} className="mb-4" />
+                <h3 className="text-xl md:text-2xl font-bold leading-tight">{business.title}</h3>
               </div>
-              <div className="p-6">
-                <p className="text-gray-600 mb-4 leading-relaxed">
+              <div className="p-6 md:p-7">
+                <p className="text-base text-gray-600 mb-5 leading-relaxed">
                   {business.description}
                 </p>
                 <button
                   onClick={() => onNavigate(business.title === 'Festival Celebrations' ? 'residential-events' : 'businesses')}
-                  className="text-amber-600 font-semibold flex items-center space-x-2 hover:text-amber-700 transition-colors"
+                  className="text-amber-600 font-semibold flex items-center space-x-2 hover:text-amber-700 transition-colors text-base group-hover:translate-x-1 duration-300"
                 >
                   <span>Learn More</span>
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -95,16 +95,16 @@ export default function Businesses({ onNavigate }: BusinessesProps) {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 md:mt-16">
           <button
             onClick={() => {
               onNavigate('contact');
               window.scrollTo(0, 0);
             }}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 shadow-xl"
           >
             <span>Get in Touch</span>
-            <ArrowRight size={20} />
+            <ArrowRight size={22} />
           </button>
         </div>
       </div>

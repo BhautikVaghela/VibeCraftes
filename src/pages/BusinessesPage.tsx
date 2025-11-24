@@ -84,54 +84,56 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
   ];
 
   return (
-    <div className="pt-20">
-      <section className="relative py-20 bg-gradient-to-br from-amber-900 to-amber-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl md:text-2xl text-amber-100 max-w-3xl">
+    <div className="pt-24">
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700 text-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 md:mb-6 leading-tight">Our Services</h1>
+          <p className="text-base md:text-xl text-amber-50 max-w-3xl leading-relaxed">
             Comprehensive event solutions spanning festivals, corporate events, MICE, brand activations, and customized experiences
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="space-y-20 md:space-y-28">
             {businesses.map((business, index) => (
               <div
                 key={index}
-                className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                className={`grid md:grid-cols-2 gap-10 md:gap-16 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                  <div className="flex items-center mb-4">
-                    <div className="bg-amber-100 p-3 rounded-lg mr-4">
+                  <div className="flex items-center mb-5 md:mb-6">
+                    <div className="bg-gradient-to-br from-amber-100 to-amber-50 p-3 md:p-4 rounded-2xl mr-4 shadow-md">
                       <business.icon size={32} className="text-amber-600" />
                     </div>
-                    <h2 className="text-4xl font-bold text-gray-900">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                       {business.title}
                     </h2>
                   </div>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
                     {business.description}
                   </p>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 md:mb-5">
                     What We Provide:
                   </h3>
-                  <ul className="space-y-3">
+                  <div className="space-y-3 md:space-y-4">
                     {business.services.map((service, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <CheckCircle size={20} className="text-amber-500 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700">{service}</span>
-                      </li>
+                      <div key={idx} className="flex items-start group">
+                        <CheckCircle size={20} className="text-green-500 mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                        <span className="text-base text-gray-700 leading-relaxed">{service}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
                 <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                  <img
-                    src={business.image}
-                    alt={business.title}
-                    className="rounded-xl shadow-2xl w-full h-96 object-cover"
-                  />
+                  <div className="rounded-2xl overflow-hidden shadow-2xl">
+                    <img
+                      src={business.image}
+                      alt={business.title}
+                      className="w-full h-72 sm:h-80 md:h-96 object-cover transform hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
                 </div>
               </div>
             ))}
@@ -139,27 +141,27 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-5 md:mb-6 leading-tight">
             Why Choose VibeCrafters?
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-16">
+            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-amber-600 mb-4">End-to-End</h3>
-              <p className="text-gray-600">
+              <p className="text-base text-gray-600 leading-relaxed">
                 From concept to execution and post-event analysis, we handle everything under one roof with seamless coordination.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-amber-600 mb-4">Strategy-First</h3>
-              <p className="text-gray-600">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+              <h3 className="text-xl md:text-2xl font-bold text-amber-600 mb-3 md:mb-4">Strategy-First</h3>
+              <p className="text-sm md:text-base text-gray-600">
                 We begin with your business objectives and craft experiences that deliver measurable impact and ROI.
               </p>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h3 className="text-2xl font-bold text-amber-600 mb-4">Creative Excellence</h3>
-              <p className="text-gray-600">
+            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg">
+              <h3 className="text-xl md:text-2xl font-bold text-amber-600 mb-3 md:mb-4">Creative Excellence</h3>
+              <p className="text-sm md:text-base text-gray-600">
                 Our young, talented team brings fresh perspectives, innovative ideas, and meticulous execution to every event.
               </p>
             </div>
@@ -167,10 +169,10 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-amber-600 to-amber-800 text-white">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-amber-600 to-amber-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Elevate Your Next Event?</h2>
-          <p className="text-xl text-amber-100 mb-8 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Ready to Elevate Your Next Event?</h2>
+          <p className="text-base md:text-xl text-amber-100 mb-6 md:mb-8 max-w-3xl mx-auto">
             Let's collaborate to create an experience that resonates with your audience and achieves your business goals.
           </p>
           <button
@@ -178,7 +180,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
               onNavigate('contact');
               window.scrollTo(0, 0);
             }}
-            className="bg-white text-amber-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-amber-50 transition-colors"
+            className="bg-white text-amber-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-amber-50 transition-colors"
           >
             Start a Conversation
           </button>

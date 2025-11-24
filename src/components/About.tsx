@@ -4,40 +4,40 @@ interface AboutProps {
 
 export default function About({ onNavigate }: AboutProps) {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-5 md:mb-6 leading-tight">
               Revolutionizing Events in Vadodara & Gujarat
             </h2>
-            <p className="text-lg text-gray-600 mb-4 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 mb-4 leading-relaxed">
               VibeCrafters Entertainment is a strategy-first experiential events partner delivering comprehensive solutions for corporate excellence and vibrant community celebrations. Our young, energetic team crafts each project with precision, transforming client briefs into innovative narratives and seamless experiences.
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 md:mb-8">
               From conceptualization and design to production and execution, we handle everything under one roof. Whether it's sophisticated business events or vibrant community festivities, we focus on delivering seamless, impactful experiences tailored to each audience with integrated stage design, lighting, AV, talent curation, and comprehensive support.
             </p>
-            <div className="mt-8">
-              <button
-                onClick={() => {
-                  onNavigate?.('contact');
-                  window.scrollTo(0, 0);
-                }}
-                className="inline-flex items-center justify-center bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-              >
-                Get in Touch
-              </button>
-            </div>
+            <button
+              onClick={() => {
+                onNavigate?.('contact');
+                window.scrollTo(0, 0);
+              }}
+              className="inline-flex items-center justify-center bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-10 py-4 rounded-xl font-bold transition-all transform hover:scale-105 text-base shadow-xl"
+            >
+              Get in Touch
+            </button>
           </div>
-          <div className="relative">
-            <img
-              src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Event experience"
-              className="rounded-lg shadow-2xl w-full h-96 object-cover"
-            />
-            <div className="absolute -bottom-6 -left-6 bg-amber-600 text-white p-6 rounded-lg shadow-xl">
-              <p className="text-3xl font-bold">100%</p>
-              <p className="text-sm">Client Satisfaction</p>
+          <div className="relative mt-6 md:mt-0">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Event experience"
+                className="w-full h-72 sm:h-80 md:h-96 object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-gradient-to-br from-amber-500 to-amber-600 text-white p-5 md:p-6 rounded-2xl shadow-2xl">
+              <p className="text-3xl md:text-4xl font-bold">100%</p>
+              <p className="text-sm md:text-base font-medium">Client Satisfaction</p>
             </div>
           </div>
         </div>

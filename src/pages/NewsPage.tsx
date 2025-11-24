@@ -31,31 +31,31 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
   const regularNews = filteredNews.filter((item) => item.section === 'latest');
 
   return (
-    <div className="pt-20">
-      <section className="relative py-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">News & Media</h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mb-8">
+    <div className="pt-24">
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 md:mb-6 leading-tight">News & Media</h1>
+          <p className="text-base md:text-xl text-blue-50 max-w-3xl mb-8 md:mb-10 leading-relaxed">
             Stay updated with our latest achievements, industry insights, and event highlights
           </p>
-          <div className="relative max-w-2xl">
+          <div className="relative max-w-2xl mx-auto md:mx-0">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             <input
               type="text"
               placeholder="Search news and updates..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full pl-12 pr-4 py-3.5 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-lg text-base"
             />
           </div>
         </div>
       </section>
 
       {featuredNews.length > 0 && (
-        <section className="py-16 bg-white">
+        <section className="py-12 md:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured News</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">Featured News</h2>
+            <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
               {featuredNews.map((item, index) => (
                 <article
                   key={index}
@@ -64,15 +64,15 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-52 md:h-64 object-cover"
                   />
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
+                  <div className="p-5 md:p-6">
+                    <div className="flex items-center justify-between mb-2 md:mb-3">
+                      <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 md:px-3 py-0.5 md:py-1 rounded-full">
                         {item.category}
                       </span>
-                      <div className="flex items-center text-sm text-gray-500">
-                        <Calendar size={16} className="mr-2" />
+                      <div className="flex items-center text-xs md:text-sm text-gray-500">
+                        <Calendar size={14} className="mr-1.5 md:mr-2 md:w-4 md:h-4" />
                         <time dateTime={item.date}>
                           {new Date(item.date).toLocaleDateString('en-US', {
                             year: 'numeric',

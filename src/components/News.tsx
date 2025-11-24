@@ -30,28 +30,28 @@ export default function News({ onNavigate, onSelectArticle }: NewsProps) {
   };
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">News & Media</h2>
-          <p className="text-xl text-gray-600">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-5 leading-tight">News & Media</h2>
+          <p className="text-base md:text-xl text-gray-600 leading-relaxed">
             Stay updated with our latest achievements and industry insights
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {articles.map((item) => (
             <article
               key={item.slug}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-56 sm:h-60 object-cover"
               />
-              <div className="p-6">
-                <div className="flex items-center text-sm text-gray-500 mb-3">
+              <div className="p-6 md:p-7">
+                <div className="flex items-center text-xs md:text-sm text-gray-500 mb-3 md:mb-4">
                   <Calendar size={16} className="mr-2" />
                   <time dateTime={item.date}>
                     {new Date(item.date).toLocaleDateString('en-US', {
@@ -61,15 +61,15 @@ export default function News({ onNavigate, onSelectArticle }: NewsProps) {
                     })}
                   </time>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-5 leading-relaxed">
                   {item.excerpt}
                 </p>
                 <button
                   onClick={() => handleReadMore(item.slug)}
-                  className="text-blue-600 font-semibold flex items-center space-x-2 hover:text-blue-700 transition-colors group"
+                  className="text-blue-600 font-semibold flex items-center space-x-2 hover:text-blue-700 transition-colors group text-sm md:text-base"
                 >
                   <span>Read More</span>
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -79,13 +79,13 @@ export default function News({ onNavigate, onSelectArticle }: NewsProps) {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-10 md:mt-12">
           <button
             onClick={() => {
               onNavigate?.('news');
               window.scrollTo(0, 0);
             }}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3.5 rounded-xl font-bold transition-all transform hover:scale-105 text-base shadow-lg"
           >
             View All News
           </button>

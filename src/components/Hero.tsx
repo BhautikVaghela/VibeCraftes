@@ -9,7 +9,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden mt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-24 py-12">
       <div
         className="absolute inset-0 bg-gradient-to-br from-amber-900 via-amber-800 to-gray-900"
         style={{
@@ -21,19 +21,19 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-amber-900/90 to-gray-900/70"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          Experiential Events That<br />Transform Your Brand
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight tracking-tight">
+          Experiential Events That<br className="hidden sm:block" /><span className="sm:hidden"> </span>Transform Your Brand
         </h1>
-        <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed">
           Dynamic event solutions for corporate excellence and vibrant community celebrations across Vadodara and Gujarat
         </p>
         <button
           onClick={scrollToServices}
-          className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center mx-auto space-x-2"
+          className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-8 py-3.5 sm:px-10 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2 shadow-xl hover:shadow-2xl"
         >
           <span>Explore Our Services</span>
-          <ArrowRight size={20} />
+          <ArrowRight size={22} />
         </button>
       </div>
 

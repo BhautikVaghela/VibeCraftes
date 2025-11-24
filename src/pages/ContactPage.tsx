@@ -44,35 +44,35 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-20">
-      <section className="relative py-20 bg-gradient-to-br from-amber-900 to-amber-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl md:text-2xl text-amber-100 max-w-3xl">
+    <div className="pt-24">
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700 text-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 md:mb-6 leading-tight">Contact Us</h1>
+          <p className="text-base md:text-xl text-amber-50 max-w-3xl leading-relaxed">
             Let's start a conversation about your next event. We're here to help bring your vision to life.
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-16">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 md:mb-6 leading-tight">
                 Get in Touch
               </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-10 leading-relaxed">
                 Have a project in mind? Fill out the form and our team will get back to you within 24 hours. We look forward to discussing how we can help you create an unforgettable experience.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-5 md:space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-amber-100 p-3 rounded-lg mr-4">
-                    <Mail className="text-amber-600" size={24} />
+                  <div className="bg-amber-100 p-2.5 md:p-3 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+                    <Mail className="text-amber-600" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
-                    <a href="mailto:vibecrafters.entertainment@gmail.com" className="text-amber-600 hover:text-amber-700">
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm md:text-base">Email Us</h3>
+                    <a href="mailto:vibecrafters.entertainment@gmail.com" className="text-amber-600 hover:text-amber-700 text-sm md:text-base break-all">
                       vibecrafters.entertainment@gmail.com
                     </a>
                   </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-gray-50 p-8 rounded-xl shadow-lg">
+            <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-xl">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -117,7 +117,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
                     placeholder="John Doe"
                   />
                 </div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -149,7 +149,7 @@ export default function ContactPage() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-base"
                       placeholder="Your Company"
                     />
                   </div>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-base"
                       placeholder="+91 12345 67890"
                     />
                   </div>
@@ -179,7 +179,7 @@ export default function ContactPage() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-base bg-white"
                   >
                     <option value="">Select a service</option>
                     <option value="festival">Festival Celebrations</option>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    className="w-full px-4 py-3.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-base resize-none"
                     placeholder="Tell us about your event or project..."
                   ></textarea>
                 </div>
@@ -225,10 +225,10 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full bg-amber-600 hover:bg-amber-700 disabled:bg-amber-400 text-white px-6 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center space-x-2"
+                  className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 disabled:from-amber-300 disabled:to-amber-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-[1.02] flex items-center justify-center space-x-2 shadow-lg"
                 >
                   <span>{status === 'loading' ? 'Sending...' : 'Send Message'}</span>
-                  <Send size={20} className={status === 'loading' ? 'animate-pulse' : ''} />
+                  <Send size={22} className={status === 'loading' ? 'animate-pulse' : ''} />
                 </button>
               </form>
             </div>

@@ -5,28 +5,22 @@ interface FooterProps {
 }
 
 export default function Footer({ onNavigate }: FooterProps) {
-  const offices = [
-    {
-      city: 'Vadodara',
-      address: 'Waghodia Road, Vadodara, Gujarat - 390025',
-      phone: '+91-9898218561',
-    },
-  ];
-
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-4 gap-12">
-          <div className="md:col-span-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+          {/* Logo and Description */}
+          <div className="text-center md:text-left">
             <img 
               src="/assets/footer-logo.png" 
               alt="VibeCrafters Entertainment" 
-              className="h-14 w-auto object-contain mb-4 brightness-110"
+              className="h-12 md:h-14 w-auto object-contain mb-4 brightness-110 mx-auto md:mx-0"
             />
             <p className="text-gray-400 leading-relaxed text-sm">
               Dynamic experiential events partner revolutionizing corporate and community celebrations.
             </p>
-            <div className="flex space-x-4 mt-6">
+            <div className="flex space-x-4 mt-6 justify-center md:justify-start">
               <button className="hover:text-amber-400 transition-colors">
                 <Linkedin size={20} />
               </button>
@@ -42,8 +36,9 @@ export default function Footer({ onNavigate }: FooterProps) {
             </div>
           </div>
 
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+          {/* Quick Links */}
+          <div className="text-center md:text-left">
+            <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
               {['home', 'about', 'businesses', 'residential-events', 'news', 'contact'].map((page) => (
                 <li key={page}>
@@ -52,7 +47,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                       onNavigate(page);
                       window.scrollTo(0, 0);
                     }}
-                    className="text-gray-400 hover:text-blue-400 transition-colors capitalize"
+                    className="text-gray-400 hover:text-blue-400 transition-colors capitalize text-sm"
                   >
                     {page === 'home' ? 'Home' : page === 'about' ? 'About us' : page === 'businesses' ? 'Corporate Services' : page === 'residential-events' ? 'Festive Events' : page === 'news' ? 'News & Media' : 'Contact'}
                   </button>
@@ -61,53 +56,60 @@ export default function Footer({ onNavigate }: FooterProps) {
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div className="md:col-span-2">
-            <h4 className="text-lg font-semibold mb-4">Our Offices</h4>
-            <div className="space-y-6">
-              {offices.map((office, index) => (
-                <div key={index} className="text-sm">
-                  <h5 className="font-semibold text-blue-400 mb-2">{office.city}</h5>
-                  <div className="flex items-start text-gray-400 mb-1">
-                    <MapPin size={16} className="mr-2 mt-1 flex-shrink-0" />
-                    <span>{office.address}</span>
-                  </div>
-                  <div className="flex items-center text-gray-400">
-                    <Phone size={16} className="mr-2" />
-                    <span>{office.phone}</span>
-                  </div>
+            <h4 className="text-lg font-semibold mb-4 text-white text-center md:text-left">Contact Us</h4>
+            <div className="space-y-4">
+              {/* Office Address */}
+              <div className="flex items-start justify-center md:justify-start text-center md:text-left">
+                <div className="bg-amber-500/10 p-2.5 rounded-lg mr-3 flex-shrink-0">
+                  <MapPin size={18} className="text-amber-400" />
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-400">
-            <div>
-              <h5 className="font-semibold text-white mb-2">Contact Us</h5>
-              <div className="flex items-center mb-1">
-                <Mail size={16} className="mr-2" />
-                <a href="mailto:vibecrafters.entertainment@gmail.com" className="hover:text-amber-400 transition-colors">
+                <div className="flex-1">
+                  <p className="text-gray-400 text-sm leading-relaxed">Waghodia Road, Vadodara,<br className="hidden sm:block" /> Gujarat - 390025</p>
+                </div>
+              </div>
+              {/* Email */}
+              <div className="flex items-center justify-center md:justify-start">
+                <div className="bg-amber-500/10 p-2.5 rounded-lg mr-3 flex-shrink-0">
+                  <Mail size={18} className="text-amber-400" />
+                </div>
+                <a 
+                  href="mailto:vibecrafters.entertainment@gmail.com" 
+                  className="text-gray-400 hover:text-amber-400 transition-colors text-sm flex-1 text-center md:text-left break-words"
+                >
                   vibecrafters.entertainment@gmail.com
                 </a>
               </div>
-              <div className="flex items-center">
-                <Phone size={16} className="mr-2" />
-                <a href="tel:+919898218561" className="hover:text-amber-400 transition-colors">
+              {/* Phone */}
+              <div className="flex items-center justify-center md:justify-start">
+                <div className="bg-amber-500/10 p-2.5 rounded-lg mr-3 flex-shrink-0">
+                  <Phone size={18} className="text-amber-400" />
+                </div>
+                <a 
+                  href="tel:+919898218561" 
+                  className="text-gray-400 hover:text-amber-400 transition-colors text-sm font-medium"
+                >
                   +91-9898218561
                 </a>
               </div>
             </div>
-            <div className="text-right">
-              <p>&copy; 2024 VibeCrafters Entertainment. All rights reserved.</p>
-              <button
-                onClick={() => onNavigate('admin-login')}
-                className="mt-2 text-gray-500 hover:text-amber-400 transition-colors text-xs flex items-center justify-end gap-1 ml-auto"
-              >
-                <Shield size={14} />
-                Admin
-              </button>
-            </div>
+          </div>
+        </div>
+
+        {/* Footer Bottom */}
+        <div className="border-t border-gray-800 mt-10 md:mt-12 pt-6 md:pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm text-center md:text-left">
+              &copy; 2024 VibeCrafters Entertainment. All rights reserved.
+            </p>
+            <button
+              onClick={() => onNavigate('admin-login')}
+              className="text-gray-500 hover:text-amber-400 transition-colors text-xs flex items-center gap-1"
+            >
+              <Shield size={14} />
+              Admin Login
+            </button>
           </div>
         </div>
       </div>
