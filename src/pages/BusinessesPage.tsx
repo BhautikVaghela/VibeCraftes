@@ -169,10 +169,10 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 bg-gradient-to-br from-amber-600 to-amber-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Ready to Elevate Your Next Event?</h2>
-          <p className="text-base md:text-xl text-amber-100 mb-6 md:mb-8 max-w-3xl mx-auto">
+      <section className="py-10 md:py-16 lg:py-20 bg-gradient-to-br from-amber-600 to-amber-800 text-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-5 leading-tight">Ready to Elevate Your Next Event?</h2>
+          <p className="text-sm sm:text-base md:text-lg text-amber-100 mb-5 md:mb-7 max-w-2xl mx-auto leading-relaxed px-2">
             Let's collaborate to create an experience that resonates with your audience and achieves your business goals.
           </p>
           <button
@@ -180,7 +180,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
               onNavigate('contact');
               window.scrollTo(0, 0);
             }}
-            className="bg-white text-amber-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-amber-50 transition-colors"
+            className="bg-white text-amber-600 px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-amber-50 hover:shadow-lg transition-all duration-300"
           >
             Start a Conversation
           </button>
