@@ -67,38 +67,38 @@ export default function ContactPage() {
 
               <div className="space-y-4 md:space-y-5">
                 <div className="flex items-start">
-                  <div className="bg-amber-100 p-2 md:p-2.5 rounded-lg mr-2.5 md:mr-3 flex-shrink-0">
-                    <Mail className="text-amber-600" size={18} />
+                  <div className="bg-amber-100 p-2.5 md:p-3 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+                    <Mail className="text-amber-600" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1 text-xs md:text-sm">Email Us</h3>
-                    <a href="mailto:vibecrafters.entertainment@gmail.com" className="text-amber-600 hover:text-amber-700 text-xs md:text-sm break-all">
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm md:text-base">Email Us</h3>
+                    <a href="mailto:vibecrafters.entertainment@gmail.com" className="text-gray-600 hover:text-amber-600 text-sm md:text-base break-all">
                       vibecrafters.entertainment@gmail.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-amber-100 p-3 rounded-lg mr-4">
-                    <Phone className="text-amber-600" size={24} />
+                  <div className="bg-amber-100 p-2.5 md:p-3 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+                    <Phone className="text-amber-600" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
-                    <a href="tel:+919898218561" className="text-gray-600 hover:text-amber-600">
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm md:text-base">Call Us</h3>
+                    <a href="tel:+919898218561" className="text-gray-600 hover:text-amber-600 text-sm md:text-base">
                       +91-9898218561
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-amber-100 p-3 rounded-lg mr-4">
-                    <Clock className="text-amber-600" size={24} />
+                  <div className="bg-amber-100 p-2.5 md:p-3 rounded-lg mr-3 md:mr-4 flex-shrink-0">
+                    <Clock className="text-amber-600" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
-                    <p className="text-gray-600">Sunday: Closed</p>
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm md:text-base">Business Hours</h3>
+                    <p className="text-gray-600 text-sm md:text-base">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p className="text-gray-600 text-sm md:text-base">Saturday: 10:00 AM - 4:00 PM</p>
+                    <p className="text-gray-600 text-sm md:text-base">Sunday: Closed</p>
                   </div>
                 </div>
               </div>
