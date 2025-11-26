@@ -21,9 +21,14 @@ export default function Footer({ onNavigate }: FooterProps) {
               Dynamic experiential events partner revolutionizing corporate and community celebrations.
             </p>
             <div className="flex space-x-4 mt-6 justify-center md:justify-start">
-              <button className="hover:text-amber-400 transition-colors">
+              <a 
+                href="https://www.linkedin.com/company/vibecrafters-entertainment/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-amber-400 transition-colors"
+              >
                 <Linkedin size={20} />
-              </button>
+              </a>
               <a 
                 href="https://www.facebook.com/share/19WzMymntK/?mibextid=wwXIfr" 
                 target="_blank" 
