@@ -60,24 +60,24 @@ export default function Businesses({ onNavigate }: BusinessesProps) {
   };
 
   return (
-    <section id="our-business" className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-5 leading-tight">Our Services</h2>
-          <p className="text-base md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+    <section id="our-business" className="py-12 md:py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">Our Services</h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Comprehensive event solutions spanning corporate excellence, festive celebrations, and brand activation
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
           {businesses.map((business, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group border border-gray-100"
+              className="bg-white rounded-xl md:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group border border-gray-100"
             >
-              <div className={`bg-gradient-to-r ${colorClasses[business.color as keyof typeof colorClasses]} p-6 md:p-7 text-white`}>
-                <business.icon size={36} className="mb-4" />
-                <h3 className="text-xl md:text-2xl font-bold leading-tight">{business.title}</h3>
+              <div className={`bg-gradient-to-r ${colorClasses[business.color as keyof typeof colorClasses]} p-5 md:p-6 text-white`}>
+                <business.icon size={28} className="mb-3 md:w-9 md:h-9" />
+                <h3 className="text-lg md:text-xl font-bold leading-tight">{business.title}</h3>
               </div>
               <div className="p-6 md:p-7">
                 <p className="text-base text-gray-600 mb-5 leading-relaxed">

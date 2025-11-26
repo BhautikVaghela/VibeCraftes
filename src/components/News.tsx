@@ -30,29 +30,29 @@ export default function News({ onNavigate, onSelectArticle }: NewsProps) {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-5 leading-tight">News & Media</h2>
-          <p className="text-base md:text-xl text-gray-600 leading-relaxed">
+    <section className="py-12 md:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="text-center mb-8 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4 leading-tight">News & Media</h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
             Stay updated with our latest achievements and industry insights
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
           {articles.map((item) => (
             <article
               key={item.slug}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+              className="bg-white rounded-xl md:rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-56 sm:h-60 object-cover"
+                className="w-full h-48 sm:h-56 object-cover"
               />
-              <div className="p-6 md:p-7">
-                <div className="flex items-center text-xs md:text-sm text-gray-500 mb-3 md:mb-4">
-                  <Calendar size={16} className="mr-2" />
+              <div className="p-5 md:p-6">
+                <div className="flex items-center text-xs md:text-sm text-gray-500 mb-2 md:mb-3">
+                  <Calendar size={14} className="mr-1.5 md:w-4 md:h-4" />
                   <time dateTime={item.date}>
                     {new Date(item.date).toLocaleDateString('en-US', {
                       year: 'numeric',
