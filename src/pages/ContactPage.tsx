@@ -44,35 +44,35 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-24">
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 md:mb-6 leading-tight">Contact Us</h1>
-          <p className="text-base md:text-xl text-amber-50 max-w-3xl leading-relaxed">
+    <div className="pt-16 md:pt-20">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700 text-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-5 leading-tight">Contact Us</h1>
+          <p className="text-sm sm:text-base md:text-lg text-amber-50 max-w-3xl leading-relaxed">
             Let's start a conversation about your next event. We're here to help bring your vision to life.
           </p>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 md:gap-16">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 md:mb-6 leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
                 Get in Touch
               </h2>
-              <p className="text-base md:text-lg text-gray-600 mb-8 md:mb-10 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
                 Have a project in mind? Fill out the form and our team will get back to you within 24 hours. We look forward to discussing how we can help you create an unforgettable experience.
               </p>
 
-              <div className="space-y-5 md:space-y-6">
+              <div className="space-y-4 md:space-y-5">
                 <div className="flex items-start">
-                  <div className="bg-amber-100 p-2.5 md:p-3 rounded-lg mr-3 md:mr-4 flex-shrink-0">
-                    <Mail className="text-amber-600" size={20} />
+                  <div className="bg-amber-100 p-2 md:p-2.5 rounded-lg mr-2.5 md:mr-3 flex-shrink-0">
+                    <Mail className="text-amber-600" size={18} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm md:text-base">Email Us</h3>
-                    <a href="mailto:vibecrafters.entertainment@gmail.com" className="text-amber-600 hover:text-amber-700 text-sm md:text-base break-all">
+                    <h3 className="font-semibold text-gray-900 mb-1 text-xs md:text-sm">Email Us</h3>
+                    <a href="mailto:vibecrafters.entertainment@gmail.com" className="text-amber-600 hover:text-amber-700 text-xs md:text-sm break-all">
                       vibecrafters.entertainment@gmail.com
                     </a>
                   </div>

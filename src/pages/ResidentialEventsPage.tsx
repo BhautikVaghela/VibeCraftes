@@ -107,61 +107,61 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
   ];
 
   return (
-    <div className="pt-20">
-      <section className="relative py-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Residential Events</h1>
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl">
+    <div className="pt-16 md:pt-20">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-5">Residential Events</h1>
+          <p className="text-sm sm:text-base md:text-lg text-blue-100 max-w-3xl">
             Celebrating culture and community with style. From traditional festivals to joyful celebrations, we deliver memorable experiences for your society
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+      <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
               Choose Your Perfect Package
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
               Tailored celebration packages designed to match your vision and budget
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Silver Package */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
-              <div className="bg-gradient-to-br from-gray-400 to-gray-600 p-8 text-white text-center">
-                <div className="inline-block p-4 bg-white/20 rounded-full mb-4">
-                  <Sparkles size={40} />
+            <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+              <div className="bg-gradient-to-br from-gray-400 to-gray-600 p-6 md:p-8 text-white text-center">
+                <div className="inline-block p-2.5 md:p-4 bg-white/20 rounded-full mb-3 md:mb-4">
+                  <Sparkles size={32} className="md:w-10 md:h-10" />
                 </div>
-                <h3 className="text-3xl font-bold mb-2">Silver Package</h3>
-                <p className="text-gray-100 text-lg">Our Starter Package</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1.5 md:mb-2">Silver Package</h3>
+                <p className="text-gray-100 text-sm md:text-base">Our Starter Package</p>
               </div>
-              <div className="p-8">
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">
+              <div className="p-5 md:p-8">
+                <p className="text-gray-600 text-center mb-5 md:mb-6 leading-relaxed text-sm md:text-base">
                   A perfect introduction to festive celebrations, this package covers all the essentials to create an engaging and colorful atmosphere while keeping things simple and budget friendly.
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2.5 md:space-y-3 mb-6 md:mb-8">
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-gray-500 mr-3 flex-shrink-0" />
-                    <span>Standard décor and setup</span>
+                    <CheckCircle size={16} className="text-gray-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Standard décor and setup</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-gray-500 mr-3 flex-shrink-0" />
-                    <span>Standard lighting and sound</span>
+                    <CheckCircle size={16} className="text-gray-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Standard lighting and sound</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-gray-500 mr-3 flex-shrink-0" />
-                    <span>Essential arrangements</span>
+                    <CheckCircle size={16} className="text-gray-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Essential arrangements</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-gray-500 mr-3 flex-shrink-0" />
-                    <span>Catering and event production</span>
+                    <CheckCircle size={16} className="text-gray-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Catering and event production</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-gray-500 mr-3 flex-shrink-0" />
-                    <span>Full event management</span>
+                    <CheckCircle size={16} className="text-gray-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Full event management</span>
                   </li>
                 </ul>
                 <button
@@ -177,41 +177,41 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
             </div>
 
             {/* Golden Package */}
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-4 border-amber-400 relative">
-              <div className="absolute top-0 right-0 bg-amber-500 text-white px-4 py-1 rounded-bl-lg text-sm font-semibold">
+            <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-2 md:border-4 border-amber-400 relative">
+              <div className="absolute top-0 right-0 bg-amber-500 text-white px-3 md:px-4 py-0.5 md:py-1 rounded-bl-lg text-xs md:text-sm font-semibold">
                 POPULAR
               </div>
-              <div className="bg-gradient-to-br from-amber-400 to-amber-600 p-8 text-white text-center">
-                <div className="inline-block p-4 bg-white/20 rounded-full mb-4">
-                  <Sparkles size={40} />
+              <div className="bg-gradient-to-br from-amber-400 to-amber-600 p-6 md:p-8 text-white text-center">
+                <div className="inline-block p-2.5 md:p-4 bg-white/20 rounded-full mb-3 md:mb-4">
+                  <Sparkles size={32} className="md:w-10 md:h-10" />
                 </div>
-                <h3 className="text-3xl font-bold mb-2">Golden Package</h3>
-                <p className="text-amber-100 text-lg">Our Preferred Package</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1.5 md:mb-2">Golden Package</h3>
+                <p className="text-amber-100 text-sm md:text-base">Our Preferred Package</p>
               </div>
-              <div className="p-8">
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">
+              <div className="p-5 md:p-8">
+                <p className="text-gray-600 text-center mb-5 md:mb-6 leading-relaxed text-sm md:text-base">
                   Our most popular choice, offering a balanced mix of decorations, entertainment, and catering to create lively, enjoyable events for larger groups.
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2.5 md:space-y-3 mb-6 md:mb-8">
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-amber-500 mr-3 flex-shrink-0" />
-                    <span>Premium décor and theming</span>
+                    <CheckCircle size={16} className="text-amber-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Premium décor and theming</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-amber-500 mr-3 flex-shrink-0" />
-                    <span>Professional sound & lighting</span>
+                    <CheckCircle size={16} className="text-amber-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Professional sound & lighting</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-amber-500 mr-3 flex-shrink-0" />
-                    <span>Entertainment arrangement</span>
+                    <CheckCircle size={16} className="text-amber-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Entertainment arrangement</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-amber-500 mr-3 flex-shrink-0" />
-                    <span>Catering arrangements</span>
+                    <CheckCircle size={16} className="text-amber-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Catering arrangements</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-amber-500 mr-3 flex-shrink-0" />
-                    <span>Full event management</span>
+                    <CheckCircle size={16} className="text-amber-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Full event management</span>
                   </li>
                 </ul>
                 <button
@@ -227,26 +227,26 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
             </div>
 
             {/* Platinum Package */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-700 p-8 text-white text-center">
-                <div className="inline-block p-4 bg-white/20 rounded-full mb-4">
-                  <Sparkles size={40} />
+            <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+              <div className="bg-gradient-to-br from-purple-500 to-purple-700 p-6 md:p-8 text-white text-center">
+                <div className="inline-block p-2.5 md:p-4 bg-white/20 rounded-full mb-3 md:mb-4">
+                  <Sparkles size={32} className="md:w-10 md:h-10" />
                 </div>
-                <h3 className="text-3xl font-bold mb-2">Platinum Package</h3>
-                <p className="text-purple-100 text-lg">Our Premium Package</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1.5 md:mb-2">Platinum Package</h3>
+                <p className="text-purple-100 text-sm md:text-base">Our Premium Package</p>
               </div>
-              <div className="p-8">
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">
+              <div className="p-5 md:p-8">
+                <p className="text-gray-600 text-center mb-5 md:mb-6 leading-relaxed text-sm md:text-base">
                   The ultimate celebration experience with full-scale décor, premium entertainment, advanced audio-visuals, and seamless event management for grand festivals.
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2.5 md:space-y-3 mb-6 md:mb-8">
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-purple-500 mr-3 flex-shrink-0" />
-                    <span>Luxury & theme décor</span>
+                    <CheckCircle size={16} className="text-purple-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Luxury & theme décor</span>
                   </li>
                   <li className="flex items-center text-gray-700">
-                    <CheckCircle size={20} className="text-purple-500 mr-3 flex-shrink-0" />
-                    <span>Premium sound and lighting</span>
+                    <CheckCircle size={16} className="text-purple-500 mr-2 md:mr-3 flex-shrink-0 md:w-5 md:h-5" />
+                    <span className="text-sm md:text-base">Premium sound and lighting</span>
                   </li>
                   <li className="flex items-center text-gray-700">
                     <CheckCircle size={20} className="text-purple-500 mr-3 flex-shrink-0" />
@@ -276,34 +276,34 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="space-y-14 md:space-y-20">
             {festivals.map((festival, index) => (
               <div
                 key={index}
-                className={`grid md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                  <div className="flex items-center mb-4">
-                    <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                      <festival.icon size={32} className="text-blue-600" />
+                  <div className="flex items-center mb-3 md:mb-4">
+                    <div className="bg-blue-100 p-2 md:p-2.5 rounded-lg mr-2.5 md:mr-3">
+                      <festival.icon size={24} className="text-blue-600 md:w-8 md:h-8" />
                     </div>
-                    <h2 className="text-4xl font-bold text-gray-900">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                       {festival.title}
                     </h2>
                   </div>
-                  <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
                     {festival.description}
                   </p>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">
                     What We Provide:
                   </h3>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 md:space-y-2.5">
                     {festival.services.map((service, idx) => (
                       <li key={idx} className="flex items-start">
-                        <CheckCircle size={20} className="text-blue-500 mr-3 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700">{service}</span>
+                        <CheckCircle size={16} className="text-blue-500 mr-2 md:mr-3 mt-0.5 flex-shrink-0 md:w-5 md:h-5" />
+                        <span className="text-gray-700 text-sm md:text-base">{service}</span>
                       </li>
                     ))}
                   </ul>
@@ -312,7 +312,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
                   <img
                     src={festival.image}
                     alt={festival.title}
-                    className="rounded-xl shadow-2xl w-full h-96 object-cover"
+                    className="rounded-lg md:rounded-xl shadow-lg md:shadow-2xl w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover"
                   />
                 </div>
               </div>
@@ -321,13 +321,13 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
             Why Choose VibeCrafters?
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-10">
+            <div className="bg-white p-5 md:p-6 lg:p-8 rounded-lg md:rounded-xl shadow-md md:shadow-lg">
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Seamless Execution</h3>
               <p className="text-gray-600">
                 From concept to completion, we handle every detail so you can simply enjoy the celebration

@@ -84,44 +84,44 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
   ];
 
   return (
-    <div className="pt-24">
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 md:mb-6 leading-tight">Our Services</h1>
-          <p className="text-base md:text-xl text-amber-50 max-w-3xl leading-relaxed">
+    <div className="pt-16 md:pt-20">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700 text-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-5 leading-tight">Our Services</h1>
+          <p className="text-sm sm:text-base md:text-lg text-amber-50 max-w-3xl leading-relaxed">
             Comprehensive event solutions spanning festivals, corporate events, MICE, brand activations, and customized experiences
           </p>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="space-y-20 md:space-y-28">
+      <section className="py-12 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+          <div className="space-y-12 md:space-y-20">
             {businesses.map((business, index) => (
               <div
                 key={index}
                 className={`grid md:grid-cols-2 gap-10 md:gap-16 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                  <div className="flex items-center mb-5 md:mb-6">
-                    <div className="bg-gradient-to-br from-amber-100 to-amber-50 p-3 md:p-4 rounded-2xl mr-4 shadow-md">
-                      <business.icon size={32} className="text-amber-600" />
+                  <div className="flex items-center mb-4 md:mb-5">
+                    <div className="bg-gradient-to-br from-amber-100 to-amber-50 p-2.5 md:p-3 rounded-xl md:rounded-2xl mr-3 shadow-md">
+                      <business.icon size={24} className="text-amber-600 md:w-8 md:h-8" />
                     </div>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
                       {business.title}
                     </h2>
                   </div>
-                  <p className="text-base md:text-lg text-gray-600 mb-6 md:mb-8 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-5 md:mb-7 leading-relaxed">
                     {business.description}
                   </p>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 md:mb-5">
+                  <h3 className="text-base md:text-lg font-bold text-gray-900 mb-3 md:mb-4">
                     What We Provide:
                   </h3>
-                  <div className="space-y-3 md:space-y-4">
+                  <div className="space-y-2.5 md:space-y-3">
                     {business.services.map((service, idx) => (
                       <div key={idx} className="flex items-start group">
-                        <CheckCircle size={20} className="text-green-500 mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                        <span className="text-base text-gray-700 leading-relaxed">{service}</span>
+                        <CheckCircle size={16} className="text-green-500 mr-2 md:mr-3 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform md:w-5 md:h-5" />
+                        <span className="text-sm md:text-base text-gray-700 leading-relaxed">{service}</span>
                       </div>
                     ))}
                   </div>

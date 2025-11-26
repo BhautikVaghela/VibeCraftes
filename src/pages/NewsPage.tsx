@@ -31,42 +31,42 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
   const regularNews = filteredNews.filter((item) => item.section === 'latest');
 
   return (
-    <div className="pt-24">
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 md:mb-6 leading-tight">News & Media</h1>
-          <p className="text-base md:text-xl text-blue-50 max-w-3xl mb-8 md:mb-10 leading-relaxed">
+    <div className="pt-16 md:pt-20">
+      <section className="relative py-12 md:py-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 text-center md:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-5 leading-tight">News & Media</h1>
+          <p className="text-sm sm:text-base md:text-lg text-blue-50 max-w-3xl mb-6 md:mb-8 leading-relaxed">
             Stay updated with our latest achievements, industry insights, and event highlights
           </p>
           <div className="relative max-w-2xl mx-auto md:mx-0">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={18} />
             <input
               type="text"
               placeholder="Search news and updates..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3.5 rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-lg text-base"
+              className="w-full pl-10 pr-4 py-3 rounded-lg md:rounded-xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-lg text-sm md:text-base"
             />
           </div>
         </div>
       </section>
 
       {featuredNews.length > 0 && (
-        <section className="py-12 md:py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">Featured News</h2>
-            <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
+        <section className="py-10 md:py-14 bg-white">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-5 md:mb-7">Featured News</h2>
+            <div className="grid sm:grid-cols-2 gap-5 md:gap-7">
               {featuredNews.map((item, index) => (
                 <article
                   key={index}
-                  className="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                  className="bg-white rounded-lg md:rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-52 md:h-64 object-cover"
+                    className="w-full h-44 sm:h-52 md:h-60 object-cover"
                   />
-                  <div className="p-5 md:p-6">
+                  <div className="p-4 md:p-5">
                     <div className="flex items-center justify-between mb-2 md:mb-3">
                       <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 md:px-3 py-0.5 md:py-1 rounded-full">
                         {item.category}
