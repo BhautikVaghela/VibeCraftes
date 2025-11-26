@@ -371,10 +371,10 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Celebrate Your Next Festival?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+      <section className="py-10 md:py-16 lg:py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-5 leading-tight">Ready to Celebrate Your Next Festival?</h2>
+          <p className="text-sm sm:text-base md:text-lg text-blue-100 mb-5 md:mb-7 max-w-2xl mx-auto leading-relaxed px-2">
             Let's collaborate to create a festive experience that brings joy and unity to your community.
           </p>
           <button
@@ -382,7 +382,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
               onNavigate('contact');
               window.scrollTo(0, 0);
             }}
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors"
+            className="bg-white text-blue-600 px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-blue-50 hover:shadow-lg transition-all duration-300"
           >
             Start a Conversation
           </button>
