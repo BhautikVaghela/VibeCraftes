@@ -57,25 +57,29 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-3 hover:bg-gray-50 rounded-lg transition-colors"
+            className="md:hidden p-2.5 hover:bg-gray-100 rounded-lg transition-all duration-200 active:scale-95"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={24} className="text-gray-700" /> : <Menu size={24} className="text-gray-700" />}
           </button>
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t bg-white">
-            <div className="flex flex-col space-y-1">
-              {navItems.map((item) => (
+          <div className="md:hidden py-3 border-t border-gray-100 bg-white shadow-lg animate-fadeIn">
+            <div className="flex flex-col space-y-1 max-h-[calc(100vh-5rem)] overflow-y-auto">
+              {navItems.map((item, index) => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`text-left px-5 py-3.5 text-base font-medium transition-colors rounded-lg ${
+                  className={`text-left px-4 py-3 text-sm font-medium transition-all duration-200 rounded-lg mx-2 ${
                     currentPage === item.id
-                      ? 'text-amber-600 bg-amber-50'
-                      : 'text-gray-700 hover:text-amber-600 hover:bg-gray-50'
+                      ? 'text-white bg-gradient-to-r from-amber-600 to-amber-500 shadow-md'
+                      : 'text-gray-700 hover:text-amber-600 hover:bg-amber-50 active:bg-amber-100'
                   }`}
+                  style={{
+                    animationDelay: `${index * 50}ms`,
+                    animation: 'slideInLeft 0.3s ease-out forwards'
+                  }}
                 >
                   {item.label}
                 </button>
