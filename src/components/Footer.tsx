@@ -24,9 +24,14 @@ export default function Footer({ onNavigate }: FooterProps) {
               <button className="hover:text-amber-400 transition-colors">
                 <Linkedin size={20} />
               </button>
-              <button className="hover:text-amber-400 transition-colors">
+              <a 
+                href="https://www.facebook.com/share/19WzMymntK/?mibextid=wwXIfr" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-amber-400 transition-colors"
+              >
                 <Facebook size={20} />
-              </button>
+              </a>
               <a 
                 href="https://www.instagram.com/vibecrafters.entertainment?igsh=MW0wYXJsaWF2bHY5Mg==" 
                 target="_blank" 
