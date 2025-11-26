@@ -82,16 +82,41 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </a>
               </div>
               {/* Phone */}
-              <div className="flex items-center justify-center md:justify-start">
+              <div className="flex items-start justify-center md:justify-start">
                 <div className="bg-amber-500/10 p-2.5 rounded-lg mr-3 flex-shrink-0">
                   <Phone size={18} className="text-amber-400" />
                 </div>
-                <a 
-                  href="tel:+919898218561" 
-                  className="text-gray-400 hover:text-amber-400 transition-colors text-sm font-medium"
-                >
-                  +91-9898218561
-                </a>
+                <div className="flex-1 text-center md:text-left">
+                  <div className="space-y-1.5">
+                    <div>
+                      <p className="text-gray-500 text-xs mb-0.5">Corporate Inquiry:</p>
+                      <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                        <a 
+                          href="tel:+919974568925" 
+                          className="text-gray-400 hover:text-amber-400 transition-colors text-sm font-medium"
+                        >
+                          99745 68925
+                        </a>
+                        <span className="text-gray-600">/</span>
+                        <a 
+                          href="tel:+919898218561" 
+                          className="text-gray-400 hover:text-amber-400 transition-colors text-sm font-medium"
+                        >
+                          9898218561
+                        </a>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-gray-500 text-xs mb-0.5">Festive Inquiry:</p>
+                      <a 
+                        href="tel:+918488892970" 
+                        className="text-gray-400 hover:text-amber-400 transition-colors text-sm font-medium"
+                      >
+                        8488-892970
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
