@@ -276,34 +276,42 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="space-y-14 md:space-y-20">
+      <section className="py-10 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 md:mb-3">
+              Festivals We Celebrate
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+              Bringing joy and tradition to life with expertly managed festival celebrations
+            </p>
+          </div>
+          <div className="space-y-10 md:space-y-16">
             {festivals.map((festival, index) => (
               <div
                 key={index}
-                className={`grid md:grid-cols-2 gap-6 md:gap-10 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                className={`grid md:grid-cols-2 gap-5 md:gap-10 items-start ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                  <div className="flex items-center mb-3 md:mb-4">
-                    <div className="bg-blue-100 p-2 md:p-2.5 rounded-lg mr-2.5 md:mr-3">
-                      <festival.icon size={24} className="text-blue-600 md:w-8 md:h-8" />
+                  <div className="flex items-start mb-3 md:mb-4">
+                    <div className="bg-blue-100 p-1.5 md:p-2.5 rounded-lg mr-2 md:mr-3 flex-shrink-0">
+                      <festival.icon size={20} className="text-blue-600 md:w-8 md:h-8" />
                     </div>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
                       {festival.title}
                     </h2>
                   </div>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 md:mb-6 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-5 leading-relaxed">
                     {festival.description}
                   </p>
-                  <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">
+                  <h3 className="text-sm md:text-base font-bold text-gray-900 mb-2 md:mb-3">
                     What We Provide:
                   </h3>
-                  <ul className="space-y-2 md:space-y-2.5">
+                  <ul className="space-y-1.5 md:space-y-2">
                     {festival.services.map((service, idx) => (
                       <li key={idx} className="flex items-start">
-                        <CheckCircle size={16} className="text-blue-500 mr-2 md:mr-3 mt-0.5 flex-shrink-0 md:w-5 md:h-5" />
-                        <span className="text-gray-700 text-sm md:text-base">{service}</span>
+                        <CheckCircle size={14} className="text-blue-500 mr-1.5 md:mr-2 mt-0.5 flex-shrink-0 md:w-5 md:h-5" />
+                        <span className="text-gray-700 text-xs md:text-sm leading-snug">{service}</span>
                       </li>
                     ))}
                   </ul>
@@ -312,7 +320,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
                   <img
                     src={festival.image}
                     alt={festival.title}
-                    className="rounded-lg md:rounded-xl shadow-lg md:shadow-2xl w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover"
+                    className="rounded-lg md:rounded-xl shadow-md md:shadow-xl w-full h-48 sm:h-56 md:h-72 lg:h-80 object-cover"
                   />
                 </div>
               </div>
