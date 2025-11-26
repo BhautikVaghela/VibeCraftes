@@ -1,4 +1,4 @@
-import { Sparkles, Briefcase, Users, Megaphone, Gift, Lightbulb, CheckCircle } from 'lucide-react';
+import { Briefcase, Users, Megaphone, Gift, Lightbulb, CheckCircle } from 'lucide-react';
 
 interface BusinessesPageProps {
   onNavigate: (page: string) => void;
