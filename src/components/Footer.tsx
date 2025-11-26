@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Instagram, Shield } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram, Shield } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -23,9 +23,6 @@ export default function Footer({ onNavigate }: FooterProps) {
             <div className="flex space-x-4 mt-6 justify-center md:justify-start">
               <button className="hover:text-amber-400 transition-colors">
                 <Linkedin size={20} />
-              </button>
-              <button className="hover:text-amber-400 transition-colors">
-                <Twitter size={20} />
               </button>
               <button className="hover:text-amber-400 transition-colors">
                 <Facebook size={20} />
