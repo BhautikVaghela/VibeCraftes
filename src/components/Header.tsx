@@ -30,12 +30,12 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         <div className="flex justify-between items-center h-16 md:h-24">
           <button
             onClick={() => handleNavClick('home')}
-            className="flex items-center hover:opacity-90 transition-opacity py-2"
+            className="flex items-center hover:opacity-90 transition-opacity py-2 -ml-2"
           >
             <img 
               src="/assets/header-logo.png" 
               alt="VibeCrafters Entertainment" 
-              className="h-10 sm:h-12 md:h-20 w-auto object-contain"
+              className="h-8 sm:h-10 md:h-16 w-auto object-contain"
             />
           </button>
 
