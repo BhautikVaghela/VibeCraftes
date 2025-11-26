@@ -126,7 +126,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="border-t border-gray-800 mt-10 md:mt-12 pt-6 md:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              &copy; 2024 VibeCrafters Entertainment. All rights reserved.
+              &copy; 2025 VibeCrafters Entertainment. All rights reserved.
             </p>
             <button
               onClick={() => onNavigate('admin-login')}
