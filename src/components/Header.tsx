@@ -35,7 +35,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             <img 
               src="/assets/header-logo.png" 
               alt="VibeCrafters Entertainment" 
-              className="h-8 sm:h-10 md:h-16 w-auto object-contain"
+              className="h-8 sm:h-10 md:h-14 w-auto object-contain"
             />
           </button>
 
