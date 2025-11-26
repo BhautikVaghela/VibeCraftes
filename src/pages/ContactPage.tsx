@@ -82,11 +82,28 @@ export default function ContactPage() {
                   <div className="bg-amber-100 p-2.5 md:p-3 rounded-lg mr-3 md:mr-4 flex-shrink-0">
                     <Phone className="text-amber-600" size={20} />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm md:text-base">Call Us</h3>
-                    <a href="tel:+919898218561" className="text-gray-600 hover:text-amber-600 text-sm md:text-base">
-                      +91-9898218561
-                    </a>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-gray-900 mb-2 text-sm md:text-base">Call Us</h3>
+                    <div className="space-y-1.5">
+                      <div>
+                        <p className="text-xs md:text-sm text-gray-500 mb-0.5">Corporate Inquiry:</p>
+                        <div className="flex flex-wrap gap-2">
+                          <a href="tel:+919974568925" className="text-gray-600 hover:text-amber-600 text-sm md:text-base font-medium transition-colors">
+                            99745 68925
+                          </a>
+                          <span className="text-gray-400">/</span>
+                          <a href="tel:+919898218561" className="text-gray-600 hover:text-amber-600 text-sm md:text-base font-medium transition-colors">
+                            9898218561
+                          </a>
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-xs md:text-sm text-gray-500 mb-0.5">Festive Inquiry:</p>
+                        <a href="tel:+918488892970" className="text-gray-600 hover:text-amber-600 text-sm md:text-base font-medium transition-colors">
+                          8488-892970
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
