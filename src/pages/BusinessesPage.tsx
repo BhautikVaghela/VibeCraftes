@@ -180,7 +180,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
               onNavigate('contact');
               window.scrollTo(0, 0);
             }}
-            className="bg-white text-amber-600 px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-amber-50 hover:shadow-lg transition-all duration-300"
+            className="bg-white text-amber-600 px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg hover:bg-amber-50 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
           >
             Start a Conversation
           </button>
