@@ -19,7 +19,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         'Trade shows and exhibitions',
         'Leadership summits',
       ],
-      image: '/assets/MICE Final.png',
+      image: '/assets/MICE Final.jpg',
     },
     {
       icon: Users,
@@ -64,7 +64,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         'Wellness retreats',
         'Incentive travel programs',
       ],
-      image: '/assets/Corporate Offsite 2 final.png',
+      image: '/assets/Corporate Offsite 2 final.jpg',
     },
     {
       icon: Lightbulb,
@@ -79,7 +79,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         'Talent curation',
         'Post-event impact analysis',
       ],
-      image: '/assets/Customise Solution Final.png',
+      image: '/assets/Customise Solution Final.jpg',
     },
   ];
 
@@ -127,10 +127,12 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
                   </div>
                 </div>
                 <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                  <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="rounded-2xl overflow-hidden shadow-2xl bg-gray-200">
                     <img
                       src={business.image}
                       alt={business.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-72 sm:h-80 md:h-96 object-cover transform hover:scale-105 transition-transform duration-500"
                     />
                   </div>

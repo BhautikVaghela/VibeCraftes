@@ -18,7 +18,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Live folk music and cultural performances',
         'Professional event coordination and crowd management',
       ],
-      image: '/assets/Uttrayan Final.png',
+      image: '/assets/Uttrayan Final.jpg',
     },
     {
       icon: Sparkles,
@@ -32,7 +32,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Refreshments and cooling zones',
         'Full event supervision and waste management',
       ],
-      image: '/assets/Holi Final.png',
+      image: '/assets/Holi Final.jpg',
     },
     {
       icon: Sparkles,
@@ -46,7 +46,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Prasad and catering services',
         'Assistance in idol installation and immersion logistics',
       ],
-      image: '/assets/Ganpati Final.png',
+      image: '/assets/Ganpati Final.jpg',
     },
     {
       icon: Sparkles,
@@ -60,7 +60,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Dandiya sticks and costume rental options',
         'Crowd control and event flow management',
       ],
-      image: '/assets/Navratri Final.png',
+      image: '/assets/Navratri Final.jpg',
     },
     {
       icon: Sparkles,
@@ -74,7 +74,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Sweet and savory catering options',
         'Guest management and safety protocols',
       ],
-      image: '/assets/Diwali Final.png',
+      image: '/assets/Diwali Final.jpg',
     },
     {
       icon: Sparkles,
@@ -88,7 +88,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Customized catering and bar services',
         'Event security and guest coordination',
       ],
-      image: '/assets/New Year Final.png',
+      image: '/assets/New Year Final.jpg',
     },
     {
       icon: Sparkles,
@@ -102,7 +102,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Special catering featuring traditional dishes',
         'Coordination of speeches, contests, and activities',
       ],
-      image: '/assets/Independence Day Final.png',
+      image: '/assets/Independence Day Final.jpg',
     },
   ];
 
@@ -317,10 +317,12 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
                   </ul>
                 </div>
                 <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                  <div className="overflow-hidden rounded-lg md:rounded-xl shadow-md md:shadow-xl">
+                  <div className="overflow-hidden rounded-lg md:rounded-xl shadow-md md:shadow-xl bg-gray-200">
                     <img
                       src={festival.image}
                       alt={festival.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-48 sm:h-56 md:h-72 lg:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
                     />
                   </div>
