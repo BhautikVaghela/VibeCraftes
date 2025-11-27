@@ -19,7 +19,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         'Trade shows and exhibitions',
         'Leadership summits',
       ],
-      image: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/assets/MICE Final.png',
     },
     {
       icon: Users,
@@ -64,7 +64,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         'Wellness retreats',
         'Incentive travel programs',
       ],
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/assets/Corporate Offsite 2 final.png',
     },
     {
       icon: Lightbulb,
@@ -79,7 +79,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         'Talent curation',
         'Post-event impact analysis',
       ],
-      image: 'https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/assets/Customise Solution Final.png',
     },
   ];
 
