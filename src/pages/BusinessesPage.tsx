@@ -153,15 +153,15 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
                 From concept to execution and post-event analysis, we handle everything under one roof with seamless coordination.
               </p>
             </div>
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-              <h3 className="text-xl md:text-2xl font-bold text-amber-600 mb-3 md:mb-4">Strategy-First</h3>
-              <p className="text-sm md:text-base text-gray-600">
+            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+              <h3 className="text-2xl font-bold text-amber-600 mb-4">Strategy-First</h3>
+              <p className="text-base text-gray-600 leading-relaxed">
                 We begin with your business objectives and craft experiences that deliver measurable impact and ROI.
               </p>
             </div>
-            <div className="bg-white p-6 md:p-8 rounded-xl shadow-lg">
-              <h3 className="text-xl md:text-2xl font-bold text-amber-600 mb-3 md:mb-4">Creative Excellence</h3>
-              <p className="text-sm md:text-base text-gray-600">
+            <div className="bg-white p-8 md:p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+              <h3 className="text-2xl font-bold text-amber-600 mb-4">Creative Excellence</h3>
+              <p className="text-base text-gray-600 leading-relaxed">
                 Our young, talented team brings fresh perspectives, innovative ideas, and meticulous execution to every event.
               </p>
             </div>
