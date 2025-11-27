@@ -335,33 +335,33 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
             Why Choose VibeCrafters?
           </h2>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-10">
-            <div className="bg-white p-5 md:p-6 lg:p-8 rounded-lg md:rounded-xl shadow-md md:shadow-lg">
+            <div className="bg-white p-5 md:p-6 lg:p-8 rounded-lg md:rounded-xl shadow-md md:shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Seamless Execution</h3>
               <p className="text-gray-600">
                 From concept to completion, we handle every detail so you can simply enjoy the celebration
               </p>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-5 md:p-6 lg:p-8 rounded-lg md:rounded-xl shadow-md md:shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Customized Solutions</h3>
               <p className="text-gray-600">
                 Each festival and community is unique; we tailor our packages and services to match your society's vision and budget
               </p>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-5 md:p-6 lg:p-8 rounded-lg md:rounded-xl shadow-md md:shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Professional Team</h3>
               <p className="text-gray-600">
                 Our experienced coordinators, technicians, and artists work in perfect harmony to deliver exceptional experiences
               </p>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 mt-6 md:mt-8 max-w-4xl mx-auto">
+            <div className="bg-white p-5 md:p-6 lg:p-8 rounded-lg md:rounded-xl shadow-md md:shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Community-Focused Approach</h3>
               <p className="text-gray-600">
                 We believe in celebrations that bring people together, fostering inclusivity and joy across all age groups
               </p>
             </div>
-            <div className="bg-white p-8 rounded-xl shadow-lg">
+            <div className="bg-white p-5 md:p-6 lg:p-8 rounded-lg md:rounded-xl shadow-md md:shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Affordable Excellence</h3>
               <p className="text-gray-600">
                 Premium quality celebrations don't have to break the bank; our tiered packages ensure accessibility for every community
