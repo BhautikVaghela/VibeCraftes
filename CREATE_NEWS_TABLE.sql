@@ -21,6 +21,12 @@ CREATE TABLE IF NOT EXISTS news_articles (
 -- Enable Row Level Security
 ALTER TABLE news_articles ENABLE ROW LEVEL SECURITY;
 
+-- Drop existing policies if they exist
+DROP POLICY IF EXISTS "Anyone can view published articles" ON news_articles;
+DROP POLICY IF EXISTS "Authenticated users can insert articles" ON news_articles;
+DROP POLICY IF EXISTS "Authenticated users can update articles" ON news_articles;
+DROP POLICY IF EXISTS "Authenticated users can delete articles" ON news_articles;
+
 -- Policy: Anyone can read published articles
 CREATE POLICY "Anyone can view published articles"
 ON news_articles FOR SELECT
@@ -54,6 +60,9 @@ BEGIN
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
+
+-- Drop existing trigger if it exists
+DROP TRIGGER IF EXISTS update_news_articles_updated_at ON news_articles;
 
 -- Create trigger to update updated_at on article updates
 CREATE TRIGGER update_news_articles_updated_at

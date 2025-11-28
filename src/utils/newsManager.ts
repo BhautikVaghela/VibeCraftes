@@ -1,5 +1,6 @@
 import { NewsArticle } from '../types/news';
 import { supabase } from '../lib/supabaseClient';
+import { clearArticlesCache } from './newsAggregator';
 
 const STORAGE_KEY = 'vibecrafters_news_articles';
 
@@ -55,6 +56,7 @@ export const addNews = async (article: Omit<NewsArticle, 'id' | 'slug'>): Promis
         .single();
       
       if (error) throw error;
+      clearArticlesCache();
       window.dispatchEvent(new Event('articlesUpdated'));
       return data;
     } catch (error) {
@@ -91,6 +93,7 @@ export const updateNews = async (id: string, updates: Partial<NewsArticle>): Pro
         .single();
       
       if (error) throw error;
+      clearArticlesCache();
       window.dispatchEvent(new Event('articlesUpdated'));
       return data;
     } catch (error) {
@@ -125,6 +128,7 @@ export const deleteNews = async (id: string): Promise<boolean> => {
         .eq('id', id);
       
       if (error) throw error;
+      clearArticlesCache();
       window.dispatchEvent(new Event('articlesUpdated'));
       return true;
     } catch (error) {
