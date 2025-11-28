@@ -1,6 +1,7 @@
 import { Calendar, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { getAllPublishedArticles } from '../utils/newsAggregator';
+import { NewsArticle } from '../types/news';
 
 interface NewsProps {
   onNavigate?: (page: string) => void;
@@ -8,11 +9,18 @@ interface NewsProps {
 }
 
 export default function News({ onNavigate, onSelectArticle }: NewsProps) {
-  const [articles, setArticles] = useState(() => getAllPublishedArticles().slice(0, 3));
+  const [articles, setArticles] = useState<NewsArticle[]>([]);
+
+  const loadArticles = async () => {
+    const allArticles = await getAllPublishedArticles();
+    setArticles(allArticles.slice(0, 3));
+  };
 
   useEffect(() => {
+    loadArticles();
+
     const handleArticlesUpdate = () => {
-      setArticles(getAllPublishedArticles().slice(0, 3));
+      loadArticles();
     };
 
     window.addEventListener('articlesUpdated', handleArticlesUpdate);

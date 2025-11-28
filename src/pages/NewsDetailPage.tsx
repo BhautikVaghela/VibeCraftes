@@ -1,5 +1,7 @@
 import { ArrowLeft, Calendar, Share2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { getArticleBySlug } from '../utils/newsAggregator';
+import { NewsArticle } from '../types/news';
 
 interface NewsDetailPageProps {
   slug: string | null;
@@ -36,7 +38,20 @@ const renderMarkdownContent = (text: string) => {
 };
 
 export default function NewsDetailPage({ slug, onNavigate, onBack }: NewsDetailPageProps) {
-  const article = slug ? getArticleBySlug(slug) : null;
+  const [article, setArticle] = useState<NewsArticle | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadArticle = async () => {
+      if (slug) {
+        setLoading(true);
+        const foundArticle = await getArticleBySlug(slug);
+        setArticle(foundArticle);
+        setLoading(false);
+      }
+    };
+    loadArticle();
+  }, [slug]);
 
   const handleBack = () => {
     if (onBack) {
@@ -46,6 +61,17 @@ export default function NewsDetailPage({ slug, onNavigate, onBack }: NewsDetailP
     }
     window.scrollTo(0, 0);
   };
+
+  if (loading) {
+    return (
+      <div className="pt-16 md:pt-20 min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+          <p className="mt-4 text-gray-600">Loading article...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!article) {
     return (
