@@ -2,58 +2,87 @@
 // Sends contact form submissions to vibecrafters.entertainment@gmail.com
 // Expects POST JSON: { name, email, company?, phone?, service?, message }
 
+// CORS headers helper
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, x-client-info, apikey, x-requested-with',
+  'Access-Control-Max-Age': '86400',
+};
+
 Deno.serve(async (req: Request) => {
+  console.log('=== FUNCTION INVOKED ===');
+  console.log('Method:', req.method);
+  console.log('URL:', req.url);
+  
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, {
-      status: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      },
+      status: 204,
+      headers: corsHeaders,
     });
   }
 
   if (req.method !== 'POST') {
     return new Response(
       JSON.stringify({ error: 'Method not allowed' }),
-      { status: 405, headers: { 'Content-Type': 'application/json' } }
+      { 
+        status: 405, 
+        headers: { 
+          'Content-Type': 'application/json',
+          ...corsHeaders
+        } 
+      }
     );
   }
 
   let payload: any = {};
   try {
     payload = await req.json();
-  } catch {
+    console.log('Received payload:', JSON.stringify(payload));
+  } catch (error) {
+    console.error('JSON parse error:', error);
     return new Response(
       JSON.stringify({ error: 'Invalid JSON' }),
-      { status: 400, headers: { 'Content-Type': 'application/json' } }
+      { 
+        status: 400, 
+        headers: { 
+          'Content-Type': 'application/json',
+          ...corsHeaders
+        } 
+      }
     );
   }
 
   const { name, email, company, phone, service, message } = payload;
 
+  console.log('Validating fields...');
   // Basic validation
   if (!name || !email || !message) {
+    console.error('Validation failed:', { name, email, message });
     return new Response(
       JSON.stringify({ error: 'Missing required fields: name, email, message' }),
-      { status: 400, headers: { 'Content-Type': 'application/json' } }
+      { 
+        status: 400, 
+        headers: { 
+          'Content-Type': 'application/json',
+          ...corsHeaders
+        } 
+      }
     );
   }
 
   // Get email service configuration
-  // Option 1: Use Resend (recommended - get API key from https://resend.com)
-  const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY');
-  
-  // Option 2: Use SendGrid (alternative)
   const SENDGRID_API_KEY = Deno.env.get('SENDGRID_API_KEY');
+  
+  console.log('Email service check:');
+  console.log('- SENDGRID_API_KEY configured:', !!SENDGRID_API_KEY);
 
   const recipientEmail = 'vibecrafters.entertainment@gmail.com';
 
   // Format email content with professional subject line
   const serviceLabel = service ? ` - ${service}` : '';
-  const emailSubject = `New Lead: ${name}${serviceLabel} | VibeCrafters`;
+  const emailSubject = `New Contact Inquiry from ${name}${serviceLabel}`;
   
   const emailBody = `
 VibeCrafters - New Contact Inquiry
@@ -260,49 +289,12 @@ This inquiry was submitted via vibecraftersentertainment.in
 </html>
   `.trim();
 
-  // Try to send email using Resend (if configured)
-  if (RESEND_API_KEY) {
-    try {
-      const resendResponse = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${RESEND_API_KEY}`,
-        },
-        body: JSON.stringify({
-          from: 'VibeCrafters Website <onboarding@resend.dev>', // Update with your verified domain
-          to: [recipientEmail],
-          reply_to: email, // Allow direct reply to the customer
-          subject: emailSubject,
-          text: emailBody,
-          html: htmlBody,
-        }),
-      });
-
-      if (!resendResponse.ok) {
-        const errorText = await resendResponse.text();
-        console.error('Resend API error:', errorText);
-        throw new Error('Email service error');
-      }
-
-      return new Response(
-        JSON.stringify({ success: true, message: 'Email sent successfully' }),
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-          },
-        }
-      );
-    } catch (err) {
-      console.error('Resend error:', err);
-      // Fall through to alternative methods
-    }
-  }
-
   // Try SendGrid (if configured)
   if (SENDGRID_API_KEY) {
+    console.log('Attempting to send email via SendGrid...');
+    console.log('From:', 'contact@vibecraftersentertainment.in');
+    console.log('To:', 'vibecrafters.entertainment@gmail.com');
+    console.log('Subject:', emailSubject);
     try {
       const sendgridResponse = await fetch('https://api.sendgrid.com/v3/mail/send', {
         method: 'POST',
@@ -319,8 +311,8 @@ This inquiry was submitted via vibecraftersentertainment.in
             subject: emailSubject
           }],
           from: { 
-            email: 'contact@vibecraftersentertainment.in',
-            name: 'VibeCrafters Website'
+            email: 'noreply@vibecraftersentertainment.in',
+            name: 'VibeCrafters Contact Form'
           },
           reply_to: { 
             email: email,
@@ -330,16 +322,10 @@ This inquiry was submitted via vibecraftersentertainment.in
             { type: 'text/plain', value: emailBody },
             { type: 'text/html', value: htmlBody }
           ],
-          headers: {
-            'X-Priority': '1',
-            'Importance': 'high',
-            'X-Entity-Ref-ID': `contact-${Date.now()}`
-          },
           mail_settings: {
             sandbox_mode: { enable: false },
             bypass_list_management: { enable: false },
-            footer: { enable: false },
-            spam_check: { enable: false }
+            footer: { enable: false }
           },
           tracking_settings: {
             click_tracking: { enable: false },
@@ -350,42 +336,64 @@ This inquiry was submitted via vibecraftersentertainment.in
         }),
       });
 
+      const responseText = await sendgridResponse.text();
+      console.log('SendGrid response status:', sendgridResponse.status);
+      console.log('SendGrid response body:', responseText);
+      
       if (!sendgridResponse.ok) {
-        const errorText = await sendgridResponse.text();
-        console.error('SendGrid API error:', errorText);
-        throw new Error('Email service error');
+        console.error('SendGrid API error status:', sendgridResponse.status);
+        console.error('SendGrid API error:', responseText);
+        throw new Error(`SendGrid error: ${sendgridResponse.status} - ${responseText}`);
       }
 
+      console.log('Email sent successfully via SendGrid!');
       return new Response(
-        JSON.stringify({ success: true, message: 'Email sent successfully' }),
+        JSON.stringify({ success: true, message: 'Email sent successfully via SendGrid!' }),
         {
           status: 200,
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
+            ...corsHeaders,
           },
         }
       );
     } catch (err) {
-      console.error('SendGrid error:', err);
+      console.error('SendGrid error caught:', err);
+      console.error('SendGrid error type:', typeof err);
+      console.error('SendGrid error message:', err instanceof Error ? err.message : String(err));
+      // Return error with CORS headers
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: 'Email sending failed',
+          details: err instanceof Error ? err.message : String(err)
+        }),
+        {
+          status: 500,
+          headers: {
+            'Content-Type': 'application/json',
+            ...corsHeaders,
+          },
+        }
+      );
     }
   }
 
-  // If no email service is configured, log and return success (data is already saved in DB)
-  console.warn('No email service configured. Email not sent, but data was saved to database.');
+  // If we get here, email service wasn't configured
+  console.warn('Email service not configured. Returning success anyway.');
   console.log('Contact form data:', { name, email, company, phone, service, message });
 
-  // Return success anyway since the data is already saved in the database
   return new Response(
     JSON.stringify({
       success: true,
-      message: 'Contact saved. Email service not configured - please check logs.',
+      message: 'Contact inquiry received',
+      warning: 'Email notification not configured',
     }),
     {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
+        ...corsHeaders,
       },
     }
   );

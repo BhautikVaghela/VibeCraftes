@@ -36,14 +36,21 @@ export async function submitContactInquiry(payload: ContactFormPayload) {
   }
 
   console.log('Data inserted successfully, attempting to send email...');
-  const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
-    body: payload,
-  });
+  
+  try {
+    const { data: emailData, error: emailError } = await supabase.functions.invoke('send-contact-email', {
+      body: payload,
+    });
 
-  if (emailError) {
-    console.error('Email error:', emailError);
-    // Don't throw error for email - data is already saved
-    console.warn('Your inquiry was saved but email notification failed.');
+    if (emailError) {
+      console.error('Email invocation error:', emailError);
+      console.error('Error details:', JSON.stringify(emailError, null, 2));
+    } else {
+      console.log('Email function invoked successfully');
+      console.log('Response:', emailData);
+    }
+  } catch (err) {
+    console.error('Exception during email send:', err);
   }
   
   console.log('Contact inquiry submitted successfully');

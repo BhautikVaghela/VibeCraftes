@@ -1,6 +1,7 @@
 import { Calendar, ArrowRight, Search } from 'lucide-react';
 import { useMemo, useState, useEffect } from 'react';
 import { getAllPublishedArticles } from '../utils/newsAggregator';
+import { NewsArticle } from '../types/news';
 
 interface NewsPageProps {
   onSelectArticle: (slug: string) => void;
@@ -8,11 +9,26 @@ interface NewsPageProps {
 
 export default function NewsPage({ onSelectArticle }: NewsPageProps) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [allArticles, setAllArticles] = useState(getAllPublishedArticles());
+  const [allArticles, setAllArticles] = useState<NewsArticle[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const loadArticles = async () => {
+    setLoading(true);
+    try {
+      const articles = await getAllPublishedArticles();
+      setAllArticles(articles);
+    } catch (error) {
+      console.error('Error loading articles:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
+    loadArticles();
+
     const handleArticlesUpdate = () => {
-      setAllArticles(getAllPublishedArticles());
+      loadArticles();
     };
 
     window.addEventListener('articlesUpdated', handleArticlesUpdate);
@@ -51,7 +67,16 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
         </div>
       </section>
 
-      {featuredNews.length > 0 && (
+      {loading ? (
+        <section className="py-10 md:py-14 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+            <p className="mt-4 text-gray-600">Loading articles...</p>
+          </div>
+        </section>
+      ) : (
+        <>
+          {featuredNews.length > 0 && (
         <section className="py-10 md:py-14 bg-white">
           <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-5 md:mb-7">Featured News</h2>
@@ -157,7 +182,8 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
           </div>
         </div>
       </section>
-
+        </>
+      )}
     </div>
   );
 }

@@ -33,8 +33,8 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) => {
     loadArticles();
   }, []);
 
-  const loadArticles = () => {
-    const stored = getStoredNews();
+  const loadArticles = async () => {
+    const stored = await getStoredNews();
     setArticles(stored);
     window.dispatchEvent(new Event('articlesUpdated'));
   };
@@ -104,23 +104,28 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) => {
     setImageDimensions(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (editingArticle) {
-      updateNews(editingArticle.id, {
-        ...formData,
-        date: editingArticle.date,
-      });
-    } else {
-      addNews({
-        ...formData,
-        date: new Date().toISOString().split('T')[0],
-      });
+    try {
+      if (editingArticle) {
+        await updateNews(editingArticle.id, {
+          ...formData,
+          date: editingArticle.date,
+        });
+      } else {
+        await addNews({
+          ...formData,
+          date: new Date().toISOString().split('T')[0],
+        });
+      }
+      
+      resetForm();
+      await loadArticles();
+    } catch (error) {
+      console.error('Error saving article:', error);
+      alert('Failed to save article. Please try again.');
     }
-    
-    resetForm();
-    loadArticles();
   };
 
   const handleEdit = (article: NewsArticle) => {
@@ -141,16 +146,16 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onNavigate }) => {
     setIsEditing(true);
   };
 
-  const handleDelete = (id: string) => {
+  const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this article?')) {
-      deleteNews(id);
-      loadArticles();
+      await deleteNews(id);
+      await loadArticles();
     }
   };
 
-  const handleTogglePublished = (article: NewsArticle) => {
-    updateNews(article.id, { published: !article.published });
-    loadArticles();
+  const handleTogglePublished = async (article: NewsArticle) => {
+    await updateNews(article.id, { published: !article.published });
+    await loadArticles();
   };
 
   const resetForm = () => {

@@ -21,8 +21,8 @@ const convertStaticArticles = () => {
 };
 
 // Get all articles (static + admin-created) that are published
-export const getAllPublishedArticles = (): NewsArticle[] => {
-  const adminArticles = getStoredNews().filter(article => article.published);
+export const getAllPublishedArticles = async (): Promise<NewsArticle[]> => {
+  const adminArticles = (await getStoredNews()).filter(article => article.published);
   const staticConverted = convertStaticArticles();
   
   // Combine and sort by date (newest first)
@@ -31,8 +31,8 @@ export const getAllPublishedArticles = (): NewsArticle[] => {
 };
 
 // Get article by slug from both sources
-export const getArticleBySlug = (slug: string): NewsArticle | null => {
-  const adminArticles = getStoredNews();
+export const getArticleBySlug = async (slug: string): Promise<NewsArticle | null> => {
+  const adminArticles = await getStoredNews();
   const adminArticle = adminArticles.find(article => article.slug === slug);
   
   if (adminArticle) {
