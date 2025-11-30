@@ -2,6 +2,7 @@ import { Calendar, ArrowRight, Search } from 'lucide-react';
 import { useMemo, useState, useEffect } from 'react';
 import { getAllPublishedArticles } from '../utils/newsAggregator';
 import { NewsArticle } from '../types/news';
+import { newsArticles as staticArticles } from '../data/news';
 
 interface NewsPageProps {
   onSelectArticle: (slug: string) => void;
@@ -9,11 +10,26 @@ interface NewsPageProps {
 
 export default function NewsPage({ onSelectArticle }: NewsPageProps) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [allArticles, setAllArticles] = useState<NewsArticle[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Initialize with static articles for instant display
+  const [allArticles, setAllArticles] = useState<NewsArticle[]>(() => {
+    return staticArticles.map((article, index) => ({
+      id: `static-${index}`,
+      slug: article.slug,
+      title: article.title,
+      excerpt: article.excerpt,
+      content: article.content ? article.content.join('\n\n') : '',
+      image: article.image,
+      category: article.category,
+      date: article.date,
+      author: article.author,
+      featured: article.featured || false,
+      published: true,
+      section: (article.featured ? 'featured' : 'latest') as 'featured' | 'latest',
+    }));
+  });
+  const [loading, setLoading] = useState(false);
 
   const loadArticles = async () => {
-    setLoading(true);
     try {
       const articles = await getAllPublishedArticles();
       setAllArticles(articles);
@@ -25,6 +41,7 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
   };
 
   useEffect(() => {
+    // Load full articles (including Supabase) in background
     loadArticles();
 
     const handleArticlesUpdate = () => {
@@ -67,16 +84,7 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
         </div>
       </section>
 
-      {loading ? (
-        <section className="py-10 md:py-14 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-            <p className="mt-4 text-gray-600">Loading articles...</p>
-          </div>
-        </section>
-      ) : (
-        <>
-          {featuredNews.length > 0 && (
+      {featuredNews.length > 0 && (
         <section className="py-10 md:py-14 bg-white">
           <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-5 md:mb-7">Featured News</h2>
@@ -89,6 +97,7 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
                   <img
                     src={item.image}
                     alt={item.title}
+                    loading="lazy"
                     className="w-full h-44 sm:h-52 md:h-60 object-cover"
                   />
                   <div className="p-4 md:p-5">
@@ -143,6 +152,7 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
@@ -182,8 +192,7 @@ export default function NewsPage({ onSelectArticle }: NewsPageProps) {
           </div>
         </div>
       </section>
-        </>
-      )}
+
     </div>
   );
 }
