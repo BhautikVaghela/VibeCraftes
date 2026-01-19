@@ -52,7 +52,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
-              {['home', 'about', 'businesses', 'educational-services', 'residential-events', 'news', 'contact'].map((page) => (
+              {['home', 'about', 'businesses', 'residential-events', 'educational-services', 'news', 'contact'].map((page) => (
                 <li key={page}>
                   <button
                     onClick={() => {
@@ -61,7 +61,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                     }}
                     className="text-gray-400 hover:text-blue-400 transition-colors capitalize text-sm"
                   >
-                    {page === 'home' ? 'Home' : page === 'about' ? 'About us' : page === 'businesses' ? 'Corporate Services' : page === 'educational-services' ? 'Educational Services' : page === 'residential-events' ? 'Wedding Planner' : page === 'news' ? 'News & Media' : 'Contact'}
+                    {page === 'home' ? 'Home' : page === 'about' ? 'About us' : page === 'businesses' ? 'Corporate Services' : page === 'residential-events' ? 'Wedding Planner' : page === 'educational-services' ? 'Educational Services' : page === 'news' ? 'News & Media' : 'Contact'}
                   </button>
                 </li>
               ))}

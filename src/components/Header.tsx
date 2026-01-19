@@ -13,8 +13,8 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About us' },
     { id: 'businesses', label: 'Corporate Services' },
-    { id: 'educational-services', label: 'Educational Services' },
     { id: 'residential-events', label: 'Wedding Planner' },
+    { id: 'educational-services', label: 'Educational Services' },
     { id: 'news', label: 'News & Media' },
     { id: 'contact', label: 'Contact' },
   ];
