@@ -78,7 +78,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                   <MapPin size={18} className="text-amber-400" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-gray-400 text-sm leading-relaxed">Waghodia Road, Vadodara,<br className="hidden sm:block" /> Gujarat - 390025</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">SF 42 Phoenix Resicom, Vaikunth Cross Road, Near Shree Ambe Vidyalaya,<br className="hidden sm:block" /> Waghodia Road, Vadodara - 390025</p>
                 </div>
               </div>
               {/* Email */}
