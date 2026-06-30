@@ -56,7 +56,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Sound, Lighting, and Stage Setup',
         'Guest Engagement Activities',
       ],
-      image: '/assets/Navratri Final.jpg',
+      image: '/assets/Entertainment & Artist Management.png',
     },
     {
       icon: Sparkles,
