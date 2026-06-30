@@ -30,7 +30,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Floral Arrangements and Stage Designing',
         'Lighting and Ambiance Enhancement',
       ],
-      image: '/assets/Holi Final.jpg',
+      image: '/assets/Customise Solution Final.jpg',
     },
     {
       icon: Sparkles,
