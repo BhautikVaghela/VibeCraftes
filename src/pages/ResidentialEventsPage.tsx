@@ -43,7 +43,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Customized Décor Styling and Layouts',
         'Creative Entry & Stage Concepts',
       ],
-      image: '/assets/Ganpati Final.jpg',
+      image: '/assets/Customised 1.png',
     },
     {
       icon: Sparkles,
