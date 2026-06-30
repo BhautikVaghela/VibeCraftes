@@ -88,15 +88,13 @@ export default function ContactPage() {
                       <div>
                         <p className="text-xs md:text-sm text-gray-500 mb-0.5">Corporate Inquiry:</p>
                         <div className="flex flex-wrap gap-2">
-
-                          <span className="text-gray-400">/</span>
                           <a href="tel:+919898218561" className="text-gray-600 hover:text-amber-600 text-sm md:text-base font-medium transition-colors">
                             9898218561
                           </a>
                         </div>
                       </div>
                       <div>
-                        <p className="text-xs md:text-sm text-gray-500 mb-0.5">Festive Inquiry:</p>
+                        <p className="text-xs md:text-sm text-gray-500 mb-0.5">Wedding Inquiry:</p>
                         <a href="tel:+918488892970" className="text-gray-600 hover:text-amber-600 text-sm md:text-base font-medium transition-colors">
                           8488-892970
                         </a>
