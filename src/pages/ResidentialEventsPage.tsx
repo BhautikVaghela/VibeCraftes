@@ -17,7 +17,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Vendor Coordination and Supervision',
         'Ceremony & Reception Flow Management',
       ],
-      image: '/assets/Wedding Planning & Management.jpg',
+      image: '/assets/wedding-planning-management.jpg',
     },
     {
       icon: Sparkles,
