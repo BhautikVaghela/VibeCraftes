@@ -104,13 +104,6 @@ export default function Footer({ onNavigate }: FooterProps) {
                       <p className="text-gray-500 text-xs mb-0.5">Corporate Inquiry:</p>
                       <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                         <a 
-                          href="tel:+919974568925" 
-                          className="text-gray-400 hover:text-amber-400 transition-colors text-sm font-medium"
-                        >
-                          99745 68925
-                        </a>
-                        <span className="text-gray-600">/</span>
-                        <a 
                           href="tel:+919898218561" 
                           className="text-gray-400 hover:text-amber-400 transition-colors text-sm font-medium"
                         >
