@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Connection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover { background: #0056b3; }
+        pre {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Supabase Connection Test</h1>
+    <div id="results"></div>
+    <button onclick="testConnection()">Test Connection</button>
+    
+    <script type="module">
+        const SUPABASE_URL = 'https://ezxqslnrnvzvxfiwuugk.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV6eHFzbG5ybnZ6dnhmaXd1dWdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0NjkzMDEsImV4cCI6MjA3OTA0NTMwMX0.IjOVkSKS0egL8DQrVUlYFtHeOz0OjtBcuc7D9MymjDM';
+        
+        function addResult(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.textContent = message;
+            document.getElementById('results').appendChild(div);
+        }
+        
+        async function testConnection() {
+            document.getElementById('results').innerHTML = '';
+            
+            addResult('🔄 Testing Supabase connection...', 'info');
+            
+            // Test 1: Check URL accessibility
+            try {
+                const response = await fetch(SUPABASE_URL);
+                addResult(`✅ Supabase URL is accessible (Status: ${response.status})`, 'success');
+            } catch (error) {
+                addResult(`❌ Cannot reach Supabase URL: ${error.message}`, 'error');
+                return;
+            }
+            
+            // Test 2: Test table access
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_queries?limit=1`, {
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                    }
+                });
+                
+                if (response.ok) {
+                    addResult('✅ Table "contact_queries" exists and is accessible', 'success');
+                    const data = await response.json();
+                    addResult(`📊 Found ${data.length} existing records`, 'info');
+                } else {
+                    const error = await response.text();
+                    addResult(`❌ Table access failed: ${response.status} - ${error}`, 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Table access error: ${error.message}`, 'error');
+            }
+            
+            // Test 3: Test insert permission
+            try {
+                const testData = {
+                    name: 'Test User',
+                    email: 'test@example.com',
+                    message: 'This is a test message',
+                    submitted_at: new Date().toISOString()
+                };
+                
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_queries`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                if (response.status === 201 || response.status === 200) {
+                    addResult('✅ INSERT permission granted - form submissions will work!', 'success');
+                } else {
+                    const error = await response.text();
+                    addResult(`❌ INSERT failed (${response.status}): ${error}`, 'error');
+                    addResult('💡 Check RLS policies or anon role permissions in Supabase', 'info');
+                }
+            } catch (error) {
+                addResult(`❌ INSERT test error: ${error.message}`, 'error');
+            }
+            
+            addResult('✅ Test complete!', 'success');
+        }
+        
+        // Auto-run on load
+        window.testConnection = testConnection;
+        testConnection();
+    </script>
+</body>
+</html>
