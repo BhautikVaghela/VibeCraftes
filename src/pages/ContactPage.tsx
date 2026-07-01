@@ -1,4 +1,4 @@
-import { Mail, Phone, Clock, Send } from 'lucide-react';
+import { Mail, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 import { submitContactInquiry } from '../services/contactService';
 
@@ -103,17 +103,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="bg-amber-100 p-2.5 md:p-3 rounded-lg mr-3 md:mr-4 flex-shrink-0">
-                    <Clock className="text-amber-600" size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1 text-sm md:text-base">Business Hours</h3>
-                    <p className="text-gray-600 text-sm md:text-base">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600 text-sm md:text-base">Saturday: 10:00 AM - 4:00 PM</p>
-                    <p className="text-gray-600 text-sm md:text-base">Sunday: Closed</p>
-                  </div>
-                </div>
               </div>
             </div>
 
