@@ -19,7 +19,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         'Trade shows and exhibitions',
         'Leadership summits',
       ],
-      image: '/assets/MICE Final.jpg',
+      image: '/assets/mice-final.jpg',
     },
     {
       icon: Users,
@@ -64,7 +64,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         'Wellness retreats',
         'Incentive travel programs',
       ],
-      image: '/assets/Corporate Offsite 2 final.jpg',
+      image: '/assets/corporate-offsite-2-final.jpg',
     },
     {
       icon: Lightbulb,
@@ -79,7 +79,7 @@ export default function BusinessesPage({ onNavigate }: BusinessesPageProps) {
         'Talent curation',
         'Post-event impact analysis',
       ],
-      image: '/assets/Customise Solution Final.jpg',
+      image: '/assets/customise-solution-final.jpg',
     },
   ];
 

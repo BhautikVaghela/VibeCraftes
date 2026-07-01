@@ -17,7 +17,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Theme-Based Stage Design',
         'Lighting, Sound & Anchor Management',
       ],
-      image: '/assets/Ganpati Final.jpg',
+      image: '/assets/annual-day-award-ceremonies.png',
     },
     {
       icon: GraduationCap,
@@ -30,7 +30,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Guest and VIP Management',
         'Audio-Visual and Presentation Support',
       ],
-      image: '/assets/Navratri Final.jpg',
+      image: '/assets/graduation-convocation-events.jpeg',
     },
     {
       icon: GraduationCap,
@@ -43,7 +43,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Stage Choreography and Management',
         'Sound, Lighting & Special Effects',
       ],
-      image: '/assets/Holi Final.jpg',
+      image: '/assets/cultural-programs-talent-shows.jpeg',
     },
     {
       icon: GraduationCap,
@@ -56,7 +56,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'DJ Nights and Entertainment',
         'Student Coordination and Logistics',
       ],
-      image: '/assets/New Year Final.jpg',
+      image: '/assets/freshers-farewell-parties.png',
     },
     {
       icon: GraduationCap,
@@ -69,7 +69,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Game Zones and Activity Areas',
         'Live Performances and DJ Setup',
       ],
-      image: '/assets/Diwali Final.jpg',
+      image: '/assets/school-carnivals-campus-festivals.png',
     },
     {
       icon: GraduationCap,
@@ -82,7 +82,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Audio-Visual and Projector Arrangements',
         'Delegate and Guest Coordination',
       ],
-      image: '/assets/Independence Day Final.jpg',
+      image: '/assets/seminars-workshops-conferences.png',
     },
     {
       icon: GraduationCap,
@@ -95,7 +95,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Motivational and Team-Building Activities',
         'Celebrity or Guest Artist Performances',
       ],
-      image: '/assets/Uttrayan Final.jpg',
+      image: '/assets/student-engagement-entertainment-activities.png',
     },
     {
       icon: GraduationCap,
@@ -108,7 +108,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Leadership and Skill-Development Camps',
         'Travel, Stay & Activity Coordination',
       ],
-      image: '/assets/Independence Day Final.jpg',
+      image: '/assets/picnics-educational-tours.png',
     },
   ];
 

@@ -43,7 +43,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Customized Décor Styling and Layouts',
         'Creative Entry & Stage Concepts',
       ],
-      image: '/assets/Customised 1.png',
+      image: '/assets/customised-1.png',
     },
     {
       icon: Sparkles,
@@ -56,7 +56,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Sound, Lighting, and Stage Setup',
         'Guest Engagement Activities',
       ],
-      image: '/assets/Entertainment & Artist Management.png',
+      image: '/assets/entertainment-artist-management.png',
     },
     {
       icon: Sparkles,
@@ -69,7 +69,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Live Food Counters and Theme-Based Dining',
         'Beverage and Dessert Stations',
       ],
-      image: '/assets/Diwali Final.jpg',
+      image: '/assets/catering-dining-experiences.jpeg',
     },
     {
       icon: Sparkles,
@@ -82,7 +82,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Pre-Wedding and Post-Wedding Shoots',
         'Highlight Reels and Wedding Albums',
       ],
-      image: '/assets/New Year Final.jpg',
+      image: '/assets/photography-cinematic-coverage.png',
     },
     {
       icon: Sparkles,
@@ -95,7 +95,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Welcome Desk and Guest Coordination',
         'Transportation and On-Site Logistics',
       ],
-      image: '/assets/Independence Day Final.jpg',
+      image: '/assets/guest-hospitality-logistics.png',
     },
     {
       icon: Sparkles,
@@ -108,7 +108,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Venue Setup at Destination Locations',
         'Full Event Execution and Support',
       ],
-      image: '/assets/Independence Day Final.jpg',
+      image: '/assets/destination-wedding-arrangements.png',
     },
   ];
 
