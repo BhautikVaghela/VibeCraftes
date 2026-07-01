@@ -17,7 +17,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Theme-Based Stage Design',
         'Lighting, Sound & Anchor Management',
       ],
-      image: '/assets/annual-day-award-ceremonies.png',
+      image: '/assets/annual-day-award-ceremonies.jpg',
     },
     {
       icon: GraduationCap,
@@ -56,7 +56,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'DJ Nights and Entertainment',
         'Student Coordination and Logistics',
       ],
-      image: '/assets/freshers-farewell-parties.png',
+      image: '/assets/freshers-farewell-parties.jpg',
     },
     {
       icon: GraduationCap,
@@ -69,7 +69,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Game Zones and Activity Areas',
         'Live Performances and DJ Setup',
       ],
-      image: '/assets/school-carnivals-campus-festivals.png',
+      image: '/assets/school-carnivals-campus-festivals.jpg',
     },
     {
       icon: GraduationCap,
@@ -82,7 +82,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Audio-Visual and Projector Arrangements',
         'Delegate and Guest Coordination',
       ],
-      image: '/assets/seminars-workshops-conferences.png',
+      image: '/assets/seminars-workshops-conferences.jpg',
     },
     {
       icon: GraduationCap,
@@ -95,7 +95,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Motivational and Team-Building Activities',
         'Celebrity or Guest Artist Performances',
       ],
-      image: '/assets/student-engagement-entertainment-activities.png',
+      image: '/assets/student-engagement-entertainment-activities.jpg',
     },
     {
       icon: GraduationCap,
@@ -108,7 +108,7 @@ export default function EducationalServicesPage({ onNavigate }: EducationalServi
         'Leadership and Skill-Development Camps',
         'Travel, Stay & Activity Coordination',
       ],
-      image: '/assets/picnics-educational-tours.png',
+      image: '/assets/picnics-educational-tours.jpg',
     },
   ];
 

@@ -43,7 +43,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Customized Décor Styling and Layouts',
         'Creative Entry & Stage Concepts',
       ],
-      image: '/assets/customised-1.png',
+      image: '/assets/customised-1.jpg',
     },
     {
       icon: Sparkles,
@@ -56,7 +56,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Sound, Lighting, and Stage Setup',
         'Guest Engagement Activities',
       ],
-      image: '/assets/entertainment-artist-management.png',
+      image: '/assets/entertainment-artist-management.jpg',
     },
     {
       icon: Sparkles,
@@ -82,7 +82,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Pre-Wedding and Post-Wedding Shoots',
         'Highlight Reels and Wedding Albums',
       ],
-      image: '/assets/photography-cinematic-coverage.png',
+      image: '/assets/photography-cinematic-coverage.jpg',
     },
     {
       icon: Sparkles,
@@ -95,7 +95,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Welcome Desk and Guest Coordination',
         'Transportation and On-Site Logistics',
       ],
-      image: '/assets/guest-hospitality-logistics.png',
+      image: '/assets/guest-hospitality-logistics.jpg',
     },
     {
       icon: Sparkles,
@@ -108,7 +108,7 @@ export default function ResidentialEventsPage({ onNavigate }: ResidentialEventsP
         'Venue Setup at Destination Locations',
         'Full Event Execution and Support',
       ],
-      image: '/assets/destination-wedding-arrangements.png',
+      image: '/assets/destination-wedding-arrangements.jpg',
     },
   ];
 
